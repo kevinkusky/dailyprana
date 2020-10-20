@@ -4,10 +4,57 @@
 <head>
     <meta charset="utf-8">
     <title>DailyPrana</title>
+    <script src='index.js'></script>
+    <link rel="stylesheet" href="./src/styles/application.css" type='text/css' >
 </head>
 
 <body>
-    <script src='index.js'></script>
+    <div class='modal'>
+        <div>
+            <form>
+                <div class='radio-button-group'>
+                    <div>
+                        <input id='radio-button' type="radio" name='fire' value='fire'>
+                        <label for="fire">Kapalabhati</label>
+                    </div>
+                    <div>
+                        <input id='radio-button' type="radio" name='ocean' value='ocean'>
+                        <label for="ocean">Ujjayi</label>
+                    </div>
+                    <div>
+                        <input id='radio-button' type="radio" name='alternate' value='alternate'>
+                        <label for="alternate">Nadi Shudhana</label>
+                    </div>
+                </div>
+                <div class='breath-specific-options'>
+                    <div>
+                        <input type="text" name='inhale' >
+                        <label for="inhale">Inhale</label>
+                    </div>
+                    <div>
+                        <input type="text" name='pause' >
+                        <label for="pause">Pause</label>
+                    </div>
+                    <div>
+                        <input type="text" name='exhale'>
+                        <label for="exhale">Exhale</label>
+                    </div>
+                    <div>
+                        <input type="text" name='total'>
+                        <label for="total">Total Time</label>
+                    </div>
+                </div>
+
+                <input type="submit" value="Start">
+            </form>
+        </div>
+        <div class='app-instructions'>
+
+            <div class='selected-breath-description'>
+                <p class='breath-descriptor'></p>
+            </div>
+        </div>
+    </div>
 </body>
 
 </html>

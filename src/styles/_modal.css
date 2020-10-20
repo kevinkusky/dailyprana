@@ -1,0 +1,15 @@
+
+.modal {
+    display: flex;
+    /* background-color: palegreen; */
+}
+
+.radio-button-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.breath-specific-options {
+    display: flex;
+    width: 420px;
+}
