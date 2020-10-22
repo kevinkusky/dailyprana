@@ -4,30 +4,30 @@
 <head>
     <meta charset="utf-8">
     <title>DailyPrana</title>
-    <script src='index.js'></script>
     <link rel="stylesheet" href="./src/styles/application.css" type='text/css' >
+    <script src='index.js'></script>
 </head>
 
 <body>
     <div class='modal'>
         <div>
-            <form>
+            <form id='app-director-form'>
                 <div class='radio-button-group'>
                     <div>
-                        <input id='radio-button' type="radio" name='fire' value='fire'>
+                        <input class='radio-button' type="radio" name='radio-control' value='fire'>
                         <label for="fire">Kapalabhati</label>
                     </div>
                     <div>
-                        <input id='radio-button' type="radio" name='ocean' value='ocean'>
+                        <input class='radio-button' type="radio" name='radio-control' value='ocean'>
                         <label for="ocean">Ujjayi</label>
                     </div>
                     <div>
-                        <input id='radio-button' type="radio" name='alternate' value='alternate'>
+                        <input class='radio-button' type="radio" name='radio-control' value='alternate'>
                         <label for="alternate">Nadi Shudhana</label>
                     </div>
                 </div>
                 <div class='breath-specific-options'>
-                    <div>
+                    <!-- <div>
                         <input type="text" name='inhale' >
                         <label for="inhale">Inhale</label>
                     </div>
@@ -42,10 +42,10 @@
                     <div>
                         <input type="text" name='total'>
                         <label for="total">Total Time</label>
-                    </div>
+                    </div> -->
                 </div>
 
-                <input type="submit" value="Start">
+                <!-- <input type="submit" value="Start"> -->
             </form>
         </div>
         <div class='app-instructions'>
