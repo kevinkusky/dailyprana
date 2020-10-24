@@ -15,6 +15,8 @@
 //     console.log('you clicked');
 // });
 
+let animationParams = {};
+
 const oceanBreathForm = () => {
     // modal descriptor and append for animation details
     // inhale, pause, exhale
@@ -24,6 +26,9 @@ const oceanBreathForm = () => {
     with some constriction from the back of the throat.  A great cue is to think of your inhales and exhales
     as an attempt to fog up a mirror.  To begin your practice, please fill out the form for inhale and exhale times.
     If you wish, I have also included a pause time if you wish to add an apnea to your practice.`;
+
+    let oceanFormSubmit = document.querySelector('.inactive-submit');
+    oceanFormSubmit.classList.add('show-submit');
 
     console.log('this will contain wet html');
 };
@@ -42,6 +47,11 @@ const fireBreathForm = () => {
         an automatic response to the exhale.  While the cues should assist, the intention should be to follow a
         steady and rigorous rythm that is not strenuous to maintain.  To start your practice, you only need to press
         the Start button and enjoy your practice.`;
+
+    let fireFormSubmit = document.querySelector('.inactive-submit');
+    fireFormSubmit.classList.add('show-submit');
+
+
     console.log('this will contain fire html');
 };
 
@@ -60,6 +70,9 @@ const altBreathForm = () => {
         Each inhale is to be followed with an exhale through the opposite nostral.  
         To start your practice, please fill our the form for inhale and exhale times.  Also, there is an optional pause time
         which will add an apnea after each inhalation.`;
+
+    let altFormSubmit = document.querySelector('.inactive-submit');
+    altFormSubmit.classList.add('show-submit');
 
     console.log('this will contain some html');
 };
@@ -89,7 +102,6 @@ const radioFormDirector = () => {
 };
 
 document.addEventListener("DOMContentLoaded", () => {
-    // let modalControls = document.querySelectorAll('.radio-button');
     radioFormDirector();
 });
 

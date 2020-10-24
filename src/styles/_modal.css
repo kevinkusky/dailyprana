@@ -6,6 +6,7 @@
     height: 600px;
     width: 100%;
     border: 1px solid palegreen;
+    gap: 10px;
     /* background-color: palegreen; */
 }
 
@@ -21,4 +22,13 @@
 
 .breath-descriptor{
     width: 486px;
+}
+
+.inactive-submit {
+    display: none;
+}
+
+.show-submit {
+    display: block;
+    margin-top: 20px;
 }
