@@ -1,6 +1,11 @@
 
 .modal {
     display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 600px;
+    width: 100%;
+    border: 1px solid palegreen;
     /* background-color: palegreen; */
 }
 
@@ -12,4 +17,8 @@
 .breath-specific-options {
     display: flex;
     width: 420px;
+}
+
+.breath-descriptor{
+    width: 486px;
 }
