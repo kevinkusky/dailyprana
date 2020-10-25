@@ -26,6 +26,7 @@
 
 .inactive-submit {
     display: none;
+    margin-top: 20px;
 }
 
 .show-submit {
