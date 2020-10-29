@@ -3,11 +3,8 @@
 
 // container.replaceWith(element);
 
-// element.classList.add('NameForCSSAnimationClass');
 
-// let items = document.querySelectorAll('.allElementsWithItemName');
-
-let animationParams = {};
+let animationParams;
 
 const oceanBreathForm = () => {
     // modal descriptor and append for animation details
@@ -28,11 +25,21 @@ const oceanBreathForm = () => {
 
 
     let oceanForm = document.querySelector('.app-director-form');
+    // oceanForm.classList.add('ocean-form');
+    // oceanForm.classList.remove('alt-form fire-form');
     oceanForm.addEventListener('submit', e => {
         e.preventDefault();
-        console.log('Ujjayi Submit');
+        animationParams = {
+            breath: 'ocean',
+            // inhale: inhaleInput.value,
+            inhale: 5,
+            // exhale: exhaleInput.value,
+            exhale: 5,
+            // pause: pauseInput.value ? pauseInput.value : 0,
+            pause: 5,
+        };
+        console.log(animationParams);
     });
-    console.log('this will contain wet html');
 };
 
 const fireBreathForm = () => {
@@ -52,16 +59,21 @@ const fireBreathForm = () => {
     // let breathParamsField = document.querySelector('.breath-specific-options');
 
     let fireForm = document.querySelector('.app-director-form');
+    // fireForm.classList.add('fire-form');
+    // fireForm.classList.remove('alt-form ocean-form');
     fireForm.addEventListener('submit', e => {
         e.preventDefault();
-        console.log('Kapalabhati Submit');
+        animationParams = {
+            breath: 'fire',
+            inhale: 5,
+            exhale: 5,
+            cycle: 60,
+        };
+        console.log(animationParams);
     });
 
     let fireFormSubmit = document.querySelector('.inactive-submit');
     fireFormSubmit.classList.add('show-submit');
-
-
-    console.log('this will contain fire html');
 };
 
 const altBreathForm = () => {
@@ -82,6 +94,8 @@ const altBreathForm = () => {
 
     // let breathParamsField = document.querySelector('.breath-specific-options');
     let altForm = document.querySelector('.app-director-form');
+    // altForm.classList.add('alt-form');
+    // altForm.classList.remove('fire-form ocean-form');
     altForm.addEventListener('submit', e => {
         e.preventDefault();
         console.log('Nadi Submit');
@@ -89,17 +103,13 @@ const altBreathForm = () => {
 
     let altFormSubmit = document.querySelector('.inactive-submit');
     altFormSubmit.classList.add('show-submit');
-
-    console.log('this will contain some html');
 };
 
 const radioFormDirector = () => {
     let radios = document.getElementsByClassName('radio-button');
-    let activeButton;
-    for(let i = 0, limit = radios.length; i < limit; i++){
+    for(let i = 0; i < radios.length; i++){
         radios[i].addEventListener('click', () => {
-            activeButton = radios[i].value;
-            switch(activeButton){
+            switch(radios[i].value){
                 case('fire'):
                     fireBreathForm();
                     break;
@@ -110,7 +120,7 @@ const radioFormDirector = () => {
                     altBreathForm();
                     break;
                 default:
-                    console.log('broke');
+                    // console.log('broke');
                     break;
             }
         });
