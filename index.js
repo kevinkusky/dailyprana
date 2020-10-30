@@ -26,7 +26,7 @@ const oceanBreathForm = () => {
                 <label for="pause">Pause</label>
             </div>
             <div>
-                <input type="text" name='exhale' class='exhale-input>
+                <input type="text" name='exhale' class='exhale-input'>
                 <label for="exhale">Exhale</label>
             </div>
         </div>

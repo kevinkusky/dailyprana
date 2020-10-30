@@ -10,29 +10,39 @@
 
 <body>
     <div class='page-wrapper'>
-    <div class='modal'>
-            <form class='app-director-form'>
-                <div class='radio-button-group'>
-                    <div>
-                        <input class='radio-button' type="radio" name='radio-control' value='fire'>
-                        <label for="fire">Kapalabhati</label>
+        <div class='modal'>
+            <div class='app-header'>
+                <h2>Daily Prana</h2>
+                <span>
+                    The daily meditation tool to help you relax and focus, please
+                    select a breath and follow the instructions to find your bliss
+                </span>
+            </div>
+            <div class='modal-content'>
+                <form class='app-director-form'>
+                    <div class='form-content'>
+                        <div class='radio-button-group'>
+                            <div>
+                                <input class='radio-button' type="radio" name='radio-control' value='fire'>
+                                <label for="fire">Kapalabhati</label>
+                            </div>
+                            <div>
+                                <input class='radio-button' type="radio" name='radio-control' value='ocean'>
+                                <label for="ocean">Ujjayi</label>
+                            </div>
+                            <div>
+                                <input class='radio-button' type="radio" name='radio-control' value='alternate'>
+                                <label for="alternate">Nadi Shudhana</label>
+                            </div>
+                        </div>
+                        <div class='breath-specific-options'></div>
                     </div>
-                    <div>
-                        <input class='radio-button' type="radio" name='radio-control' value='ocean'>
-                        <label for="ocean">Ujjayi</label>
+                    <input class='inactive-submit' type="submit" value="Start">
+                </form>
+                <div class='app-instructions'>
+                    <div class='selected-breath-description'>
+                        <p class='breath-descriptor'></p>
                     </div>
-                    <div>
-                        <input class='radio-button' type="radio" name='radio-control' value='alternate'>
-                        <label for="alternate">Nadi Shudhana</label>
-                    </div>
-                </div>
-                <div class='breath-specific-options'></div>
-
-                <input class='inactive-submit' type="submit" value="Start">
-            </form>
-            <div class='app-instructions'>
-                <div class='selected-breath-description'>
-                    <p class='breath-descriptor'></p>
                 </div>
             </div>
         </div>
