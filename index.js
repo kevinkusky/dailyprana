@@ -16,7 +16,7 @@ const oceanBreathForm = () => {
     let breathParamsField = document.querySelector('.breath-specific-options');
 
     breathParamsField.insertAdjacentHTML('afterbegin', `
-        <div>
+        <div class='input-group'>
             <div>
                 <input type="text" name='inhale' class='inhale-input' >
                 <label for="inhale">Inhale</label>
@@ -107,7 +107,23 @@ const altBreathForm = () => {
         To start your practice, please fill our the form for inhale and exhale times.  Also, there is an optional pause time
         which will add an apnea after each inhalation.`;
 
-    // let breathParamsField = document.querySelector('.breath-specific-options');
+        // let breathParamsField = document.querySelector('.breath-specific-options');
+        // breathParamsField.insertAdjacentHTML('afterbegin', `
+        //     <div class='input-group'>
+        //         <div>
+        //             <input type="text" name='inhale' class='inhale-input' >
+        //             <label for="inhale">Inhale</label>
+        //         </div>
+        //         <div>
+        //             <input type="text" name='pause' class='pause-input'>
+        //             <label for="pause">Pause</label>
+        //         </div>
+        //         <div>
+        //             <input type="text" name='exhale' class='exhale-input'>
+        //             <label for="exhale">Exhale</label>
+        //         </div>
+        //     </div>
+        // `);
     let altForm = document.querySelector('.app-director-form');
 
     altForm.addEventListener('submit', e => {

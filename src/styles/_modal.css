@@ -63,13 +63,20 @@ body {
 
 .app-instructions {
     margin-top: 50px;
-    margin-left: -100px;
+    margin-left: -120px;
 }
 
 .breath-specific-options {
     display: flex;
     width: 420px;
+    margin-top: -20px;
 }
+
+.inhale-input, .exhale-input, .pause-input {
+    margin: 10px 0px;
+}
+
+
 
 .breath-descriptor{
     width: 486px;
