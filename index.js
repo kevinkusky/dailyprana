@@ -17,22 +17,25 @@ const oceanBreathForm = () => {
 
     breathParamsField.insertAdjacentHTML('afterbegin', `
         <div>
-            <input type="text" name='inhale' >
-            <label for="inhale">Inhale</label>
-        </div>
-        <div>
-            <input type="text" name='pause' >
-            <label for="pause">Pause</label>
-        </div>
-        <div>
-            <input type="text" name='exhale'>
-            <label for="exhale">Exhale</label>
-        </div>
-        <div>
-            <input type="text" name='total'>
-            <label for="total">Total Time</label>
+            <div>
+                <input type="text" name='inhale' class='inhale-input' >
+                <label for="inhale">Inhale</label>
+            </div>
+            <div>
+                <input type="text" name='pause' class='pause-input'>
+                <label for="pause">Pause</label>
+            </div>
+            <div>
+                <input type="text" name='exhale' class='exhale-input>
+                <label for="exhale">Exhale</label>
+            </div>
         </div>
     `);
+        // saved incase needed
+        // <div>
+        //     <input type="text" name='total'>
+        //     <label for="total">Total Time</label>
+        // </div>
 
     let oceanFormSubmit = document.querySelector('.inactive-submit');
     oceanFormSubmit.classList.add('show-submit');
