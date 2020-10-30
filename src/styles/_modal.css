@@ -6,9 +6,9 @@ body {
 }
 
 .page-wrapper {
-    background: rgb(0,0,0) url(../../assets/dp_backgroundimg.jpg) 0% 48% no-repeat fixed;
-    background-size: cover;
-    height: 99%;
+    background: rgb(0,0,0) url(../../assets/dp_background.png) 40% 50% no-repeat fixed;
+    background-size: 93% 92%;
+    height: 100%;
     width: 100%;
     opacity: 0.88;
 }
@@ -18,7 +18,7 @@ body {
     align-content: center;
     align-items: center;
     height: 82vh;
-    width: 89%;
+    width: 87%;
     border: 1px solid palegreen;
     gap: 20px;
     margin: 70px;

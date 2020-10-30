@@ -123,6 +123,23 @@ const radioFormDirector = () => {
                     // console.log('broke');
                     break;
             }
+            // activeVal = radios[i].checked ? radios[i].value : '';
+            // // activeVal = '';
+            // // activeVal = radios[i].value;
+            // switch(activeVal){
+            //     case('fire'):
+            //         fireBreathForm();
+            //         break;
+            //     case('ocean'):
+            //         oceanBreathForm();
+            //         break;
+            //     case('alternate'):
+            //         altBreathForm();
+            //         break;
+            //     default:
+            //         // console.log('broke');
+            //         break;
+            // }
         });
     }
 };
