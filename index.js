@@ -3,12 +3,9 @@
 
 // container.replaceWith(element);
 
-
 let animationParams;
 
 const oceanBreathForm = () => {
-    // modal descriptor and append for animation details
-    // inhale, pause, exhale
     let descriptorPar = document.querySelector('.breath-descriptor');
     descriptorPar.innerHTML = `The Ujjayi breathing technique might be familiar if you have practiced yoga before.
     Ujjayi breath is sometimes refered to as a breath of victory or an oceanic breath.  The inhale is an audible breath
@@ -16,17 +13,33 @@ const oceanBreathForm = () => {
     To begin your practice, please fill out the form for inhale and exhale times. 
     If you wish, I have also included a pause time if you wish to add an apnea to your practice.`;
 
-    // let breathParamsField = document.querySelector('.breath-specific-options');
+    let breathParamsField = document.querySelector('.breath-specific-options');
 
-    // insertAdjacentHTML
+    breathParamsField.insertAdjacentHTML('afterbegin', `
+        <div>
+            <input type="text" name='inhale' >
+            <label for="inhale">Inhale</label>
+        </div>
+        <div>
+            <input type="text" name='pause' >
+            <label for="pause">Pause</label>
+        </div>
+        <div>
+            <input type="text" name='exhale'>
+            <label for="exhale">Exhale</label>
+        </div>
+        <div>
+            <input type="text" name='total'>
+            <label for="total">Total Time</label>
+        </div>
+    `);
 
     let oceanFormSubmit = document.querySelector('.inactive-submit');
     oceanFormSubmit.classList.add('show-submit');
 
 
     let oceanForm = document.querySelector('.app-director-form');
-    // oceanForm.classList.add('ocean-form');
-    // oceanForm.classList.remove('alt-form fire-form');
+
     oceanForm.addEventListener('submit', e => {
         e.preventDefault();
         animationParams = {
@@ -59,8 +72,7 @@ const fireBreathForm = () => {
     // let breathParamsField = document.querySelector('.breath-specific-options');
 
     let fireForm = document.querySelector('.app-director-form');
-    // fireForm.classList.add('fire-form');
-    // fireForm.classList.remove('alt-form ocean-form');
+
     fireForm.addEventListener('submit', e => {
         e.preventDefault();
         animationParams = {
@@ -94,8 +106,7 @@ const altBreathForm = () => {
 
     // let breathParamsField = document.querySelector('.breath-specific-options');
     let altForm = document.querySelector('.app-director-form');
-    // altForm.classList.add('alt-form');
-    // altForm.classList.remove('fire-form ocean-form');
+
     altForm.addEventListener('submit', e => {
         e.preventDefault();
         console.log('Nadi Submit');
