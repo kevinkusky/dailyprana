@@ -1,7 +1,6 @@
 // container.prepend(element);
 // container.replaceWith(element);
 
-
 // create 1 submit handle
 
 let animationParams;
@@ -16,7 +15,7 @@ const oceanBreathForm = () => {
 
     let breathParamsField = document.querySelector('.breath-specific-options');
 
-    breathParamsField.insertAdjacentHTML('afterbegin', `
+    breathParamsField.innerHTML = `
         <div class='input-group'>
             <div>
                 <input type="text" name='inhale' class='inhale-input' >
@@ -31,7 +30,7 @@ const oceanBreathForm = () => {
                 <label for="exhale">Exhale</label>
             </div>
         </div>
-    `);
+    `;
         // saved incase needed
         // <div>
         //     <input type="text" name='total'>
@@ -41,7 +40,7 @@ const oceanBreathForm = () => {
     let oceanFormSubmit = document.querySelector('.inactive-submit');
     oceanFormSubmit.classList.add('show-submit');
 
-    let radios = document.getElementsByClassName('radio-button');
+    // let radios = document.getElementsByClassName('radio-button');
     
     let oceanForm = document.querySelector('.app-director-form');
     
@@ -56,11 +55,11 @@ const oceanBreathForm = () => {
             // pause: pauseInput.value ? pauseInput.value : 0,
             pause: 5,
         };
-        for(let i = 0; i < radios.length; i++){
-            if(radios[i].checked && radios[i].value === 'ocean'){
-                console.log(animationParams);
-            }
-        }
+        console.log(animationParams);
+        // for(let i = 0; i < radios.length; i++){
+        //     if(radios[i].checked && radios[i].value === 'ocean'){
+        //     }
+        // }
     });
 };
 
@@ -78,9 +77,11 @@ const fireBreathForm = () => {
     While the cues should assist, the intention should be to follow a steady and rigorous rythm that is not strenuous 
     to maintain.  To start your practice, you only need to press the Start button and enjoy your practice.`;
 
-    // let breathParamsField = document.querySelector('.breath-specific-options');
+    let breathParamsField = document.querySelector('.breath-specific-options');
+    breathParamsField.innerHTML = '';
 
     let fireForm = document.querySelector('.app-director-form');
+    // let radios = document.getElementsByClassName('radio-button');
 
     fireForm.addEventListener('submit', e => {
         e.preventDefault();
@@ -91,6 +92,11 @@ const fireBreathForm = () => {
             cycle: 60,
         };
         console.log(animationParams);
+        
+        // for(let i = 0; i < radios.length; i++){
+        //     if(radios[i].checked && radios[i].value === 'fire'){
+        //     }
+        // }
     });
 
     let fireFormSubmit = document.querySelector('.inactive-submit');
@@ -113,23 +119,9 @@ const altBreathForm = () => {
     To start your practice, please fill our the form for inhale and exhale times.  Also, there is an optional pause time
     which will add an apnea after each inhalation.`;
 
-    // let breathParamsField = document.querySelector('.breath-specific-options');
-    // breathParamsField.insertAdjacentHTML('afterbegin', `
-    //     <div class='input-group'>
-    //         <div>
-    //             <input type="text" name='inhale' class='inhale-input' >
-    //             <label for="inhale">Inhale</label>
-    //         </div>
-    //         <div>
-    //             <input type="text" name='pause' class='pause-input'>
-    //             <label for="pause">Pause</label>
-    //         </div>
-    //         <div>
-    //             <input type="text" name='exhale' class='exhale-input'>
-    //             <label for="exhale">Exhale</label>
-    //         </div>
-    //     </div>
-    // `);
+    let breathParamsField = document.querySelector('.breath-specific-options');
+    breathParamsField.innerHTML = '';
+    
     let altForm = document.querySelector('.app-director-form');
 
     altForm.addEventListener('submit', e => {
@@ -144,7 +136,7 @@ const altBreathForm = () => {
 const radioFormDirector = () => {
     let radios = document.getElementsByClassName('radio-button');
     for(let i = 0; i < radios.length; i++){
-        radios[i].addEventListener('click', () => {
+        radios[i].addEventListener('change', () => {
             switch(radios[i].value){
                 case('fire'):
                     fireBreathForm();
@@ -158,8 +150,8 @@ const radioFormDirector = () => {
                 default:
                     // console.log('broke');
                     break;
-        }
-    });
+            }
+        });
     }
 };
 
