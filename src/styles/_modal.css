@@ -7,20 +7,18 @@ body {
 
 .page-wrapper {
     background: rgb(0,0,0) url(../../assets/dp_background.png) 40% 50% no-repeat fixed;
-    background-size: 93% 92%;
-    height: 100%;
+    background-size: 86% 87%;
     width: 100%;
     opacity: 0.82;
     z-index: 0;
 }
 
 .modal {
-    height: 82vh;
-    width: 87%;
     border: 1px solid palegreen;
-    gap: 20px;
+    height: 82vh;
+    width: 84%;
     margin: 70px;
-    padding-left: 40px;
+    margin-left: 100px;
 }
 
 .app-header {
@@ -29,9 +27,13 @@ body {
     align-items: center;
 }
 
-.app-header span {
+.app-header span, h2 {
     font-weight: 800;
-    z-index: 2;
+    color: whitesmoke;
+    background-color: rgba(0, 0, 0, 0.426);
+    height: 30px;
+    padding: 5px;
+    padding-top: 8px;
 }
 
 .modal-content {
@@ -62,14 +64,16 @@ body {
 }
 
 .app-instructions {
-    margin-top: 40px;
-    margin-left: -120px;
+    margin-top: -20px;
+    margin-left: -180px;
+
 }
 
 .breath-specific-options {
     display: flex;
     width: 420px;
     margin-top: -20px;
+
 }
 
 .inhale-input, .exhale-input, .pause-input {
@@ -77,7 +81,11 @@ body {
 }
 
 .breath-descriptor{
-    width: 486px;
+    width: 540px;
+    color: whitesmoke;
+    background-color: rgba(0, 0, 0, 0.426);
+    padding: 10px;
+    margin-left: 20px;
 }
 
 .inactive-submit {
