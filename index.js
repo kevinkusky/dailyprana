@@ -2,8 +2,21 @@
 // container.replaceWith(element);
 
 // create 1 submit handle
-
 let animationParams;
+
+const formSubmit = (params) => {
+    let form = document.querySelector('.app-director-form');
+
+    form.addEventListener('submit', e => {
+        e.preventDefault();
+        let radios = document.getElementsByClassName('radio-button');
+        for(let i = 0; i < radios.length; i++){
+            if(radios[i].checked && radios[i].value === params.breath){
+                console.log(params);
+            }
+        }
+    });
+};
 
 const oceanBreathForm = () => {
     let descriptorPar = document.querySelector('.breath-descriptor');
@@ -14,7 +27,6 @@ const oceanBreathForm = () => {
     If you wish, I have also included a pause time if you wish to add an apnea to your practice.`;
 
     let breathParamsField = document.querySelector('.breath-specific-options');
-
     breathParamsField.innerHTML = `
         <div class='input-group'>
             <div>
@@ -40,27 +52,18 @@ const oceanBreathForm = () => {
     let oceanFormSubmit = document.querySelector('.inactive-submit');
     oceanFormSubmit.classList.add('show-submit');
 
-    // let radios = document.getElementsByClassName('radio-button');
-    
-    let oceanForm = document.querySelector('.app-director-form');
-    
-    oceanForm.addEventListener('submit', e => {
-        e.preventDefault();
-        animationParams = {
-            breath: 'ocean',
-            // inhale: inhaleInput.value,
-            inhale: 5,
-            // exhale: exhaleInput.value,
-            exhale: 5,
-            // pause: pauseInput.value ? pauseInput.value : 0,
-            pause: 5,
-        };
-        console.log(animationParams);
-        // for(let i = 0; i < radios.length; i++){
-        //     if(radios[i].checked && radios[i].value === 'ocean'){
-        //     }
-        // }
-    });
+    animationParams = {
+        breath: 'ocean',
+        // inhale: inhaleInput.value,
+        inhale: 5,
+        // exhale: exhaleInput.value,
+        exhale: 5,
+        // pause: pauseInput.value ? pauseInput.value : 0,
+        pause: 5,
+    };
+
+    formSubmit(animationParams);
+
 };
 
 const fireBreathForm = () => {
@@ -68,7 +71,6 @@ const fireBreathForm = () => {
     // append submit button - defaults for animations
 
     let descriptorPar = document.querySelector('.breath-descriptor');
-
     descriptorPar.innerHTML = `Kapalabhati, or skull shining breath, is a 
     yogic breathing technique aimed to clear the mind, energize the body, and stimulate digestion.
     To practice this breath, first start with a long inhale and exhale to prepare for the practice.
@@ -80,34 +82,23 @@ const fireBreathForm = () => {
     let breathParamsField = document.querySelector('.breath-specific-options');
     breathParamsField.innerHTML = '';
 
-    let fireForm = document.querySelector('.app-director-form');
-    // let radios = document.getElementsByClassName('radio-button');
-
-    fireForm.addEventListener('submit', e => {
-        e.preventDefault();
-        animationParams = {
-            breath: 'fire',
-            inhale: 5,
-            exhale: 5,
-            cycle: 60,
-        };
-        console.log(animationParams);
-        
-        // for(let i = 0; i < radios.length; i++){
-        //     if(radios[i].checked && radios[i].value === 'fire'){
-        //     }
-        // }
-    });
+    animationParams = {
+        breath: 'fire',
+        inhale: 5,
+        exhale: 5,
+        cycle: 60,
+    };
 
     let fireFormSubmit = document.querySelector('.inactive-submit');
     fireFormSubmit.classList.add('show-submit');
+
+    formSubmit(animationParams);
 };
 
 const altBreathForm = () => {
     // modal descriptor and append for animation details
     // optional pause time, breath time
     let descriptorPar = document.querySelector('.breath-descriptor');
-
     descriptorPar.innerHTML = `Nadi Shodhana is known as Alternate Nostril Breathing.  As the name might suggest,
     this breath will involve using the hands as a way of restricting the breath in and out of one nostral at a time.
     This type of breathing can help balance the hemispheres of the brain as well as help focus the mind and purify
@@ -119,18 +110,24 @@ const altBreathForm = () => {
     To start your practice, please fill our the form for inhale and exhale times.  Also, there is an optional pause time
     which will add an apnea after each inhalation.`;
 
+    animationParams = {
+        breath: 'alternate',
+        // inhale: inhaleInput.value,
+        inhale: 5,
+        // exhale: exhaleInput.value,
+        exhale: 5,
+        // pause: pauseInput.value ? pauseInput.value : 0,
+        pause: 5,
+    };
+
     let breathParamsField = document.querySelector('.breath-specific-options');
     breathParamsField.innerHTML = '';
-    
-    let altForm = document.querySelector('.app-director-form');
-
-    altForm.addEventListener('submit', e => {
-        e.preventDefault();
-        console.log('Nadi Submit');
-    });
 
     let altFormSubmit = document.querySelector('.inactive-submit');
     altFormSubmit.classList.add('show-submit');
+
+
+    formSubmit(animationParams);
 };
 
 const radioFormDirector = () => {
