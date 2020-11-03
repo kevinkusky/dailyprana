@@ -98,3 +98,16 @@ body {
     margin-top: 20px;
     margin-left: -93%;
 }
+
+.eventual-circle {
+    display: none;
+}
+
+.circle-page-wrap {
+    background: rgb(0,0,0) url(../../assets/mp-breath-bg.png) 40% 50% no-repeat fixed;
+    background-size: 86% 87%;
+    width: 100%;
+    height: 100vh;
+    opacity: 0.82;
+    z-index: 100;
+}
