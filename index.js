@@ -1,27 +1,35 @@
-// container.prepend(element);
-// container.replaceWith(element);
-
-// create 1 submit handle
 let animationParams;
 
-const formSubmit = (params) => {
+const formSubmit = params => {
     let form = document.querySelector('.app-director-form');
-
+    
     form.addEventListener('submit', e => {
         e.preventDefault();
+
+        console.log(e.target.value);
+
         let radios = document.getElementsByClassName('radio-button');
         for(let i = 0; i < radios.length; i++){
-            if(radios[i].checked && radios[i].value === params.breath){
+
+            // is checked 'ever checked' or 'actively checked'
+            if(radios[i].checked){
+
+                console.log(params.breath);
+
+                let modalForm = document.querySelector('.page-wrapper');
+
+                // prevents mult runnings
+                if (!modalForm) {return null;}
+
+                modalForm.remove();
+        
                 console.log(params);
-            }
+
+                let circlePage = document.querySelector('.eventual-circle');
+                circlePage.classList.remove('eventual-circle');
+                circlePage.classList.add('circle-page-wrap');
+            } 
         }
-
-        let modalForm = document.querySelector('.page-wrapper');
-        modalForm.remove();
-
-        let circlePage = document.querySelector('.eventual-circle');
-        circlePage.classList.remove('eventual-circle');
-        circlePage.classList.add('circle-page-wrap');
     });
 };
 
@@ -74,7 +82,6 @@ const oceanBreathForm = () => {
     };
 
     formSubmit(animationParams);
-
 };
 
 const fireBreathForm = () => {
@@ -127,6 +134,24 @@ const altBreathForm = () => {
         which will add an apnea after each inhalation.
     </p>
     `;
+    
+    let breathParamsField = document.querySelector('.breath-specific-options');
+    breathParamsField.innerHTML = `
+        <div class='input-group'>
+            <div>
+                <input type="text" name='inhale' class='inhale-input' >
+                <label for="inhale">Inhale</label>
+            </div>
+            <div>
+                <input type="text" name='pause' class='pause-input' >
+                <label for="pause">Pause</label>
+            </div>
+            <div>
+                <input type="text" name='exhale' class='exhale-input'>
+                <label for="exhale">Exhale</label>
+            </div>
+        </div>
+    `;
 
     animationParams = {
         breath: 'alternate',
@@ -138,12 +163,8 @@ const altBreathForm = () => {
         pause: 5,
     };
 
-    let breathParamsField = document.querySelector('.breath-specific-options');
-    breathParamsField.innerHTML = '';
-
     let altFormSubmit = document.querySelector('.inactive-submit');
     altFormSubmit.classList.add('show-submit');
-
 
     formSubmit(animationParams);
 };
@@ -163,7 +184,6 @@ const radioFormDirector = () => {
                     altBreathForm();
                     break;
                 default:
-                    // console.log('broke');
                     break;
             }
         });
