@@ -1,41 +1,31 @@
+document.addEventListener("DOMContentLoaded", () => {
+
 let animationParams;
 
-const formSubmit = params => {
-    let form = document.querySelector('.app-director-form');
+let form = document.querySelector(".app-director-form");
+
+const formSubmit = e => {
+    e.preventDefault();
+    let modalForm = document.querySelector(".page-wrapper");
     
-    form.addEventListener('submit', e => {
-        e.preventDefault();
-
-        console.log(e.target.value);
-
-        let radios = document.getElementsByClassName('radio-button');
-        for(let i = 0; i < radios.length; i++){
-
-            // is checked 'ever checked' or 'actively checked'
-            if(radios[i].checked){
-
-                console.log(params.breath);
-
-                let modalForm = document.querySelector('.page-wrapper');
-
-                // prevents mult runnings
-                if (!modalForm) {return null;}
-
-                modalForm.remove();
-        
-                console.log(params);
-
-                let circlePage = document.querySelector('.eventual-circle');
-                circlePage.classList.remove('eventual-circle');
-                circlePage.classList.add('circle-page-wrap');
-            } 
-        }
-    });
+    console.log(animationParams);
+    // prevents mult runnings
+    if (!modalForm) {
+        return null;
+    }
+    
+    modalForm.remove();
+    
+    let circlePage = document.querySelector(".eventual-circle");
+    circlePage.classList.add("circle-page-wrap");
+    circlePage.classList.remove("eventual-circle");
 };
 
+form.addEventListener("submit", formSubmit);
+
 const oceanBreathForm = () => {
-    let descriptorPar = document.querySelector('.selected-breath-description');
-    descriptorPar.innerHTML = `
+  let descriptorPar = document.querySelector(".selected-breath-description");
+  descriptorPar.innerHTML = `
     <p class='breath-descriptor'>
         The Ujjayi breathing technique might be familiar if you have practiced yoga before.
         Ujjayi breath is sometimes refered to as a breath of victory or an oceanic breath.  The inhale is an audible breath
@@ -43,10 +33,10 @@ const oceanBreathForm = () => {
         To begin your practice, please fill out the form for inhale and exhale times. 
         If you wish, I have also included a pause time if you wish to add an apnea to your practice.
     </p>
-    `;
+  `;
 
-    let breathParamsField = document.querySelector('.breath-specific-options');
-    breathParamsField.innerHTML = `
+  let breathParamsField = document.querySelector(".breath-specific-options");
+  breathParamsField.innerHTML = `
         <div class='input-group'>
             <div>
                 <input type="text" name='inhale' class='inhale-input' >
@@ -62,34 +52,33 @@ const oceanBreathForm = () => {
             </div>
         </div>
     `;
-        // saved incase needed
-        // <div>
-        //     <input type="text" name='total'>
-        //     <label for="total">Total Time</label>
-        // </div>
+  // saved incase needed
+  // <div>
+  //     <input type="text" name='total'>
+  //     <label for="total">Total Time</label>
+  // </div>
 
-    let oceanFormSubmit = document.querySelector('.inactive-submit');
-    oceanFormSubmit.classList.add('show-submit');
+  let oceanFormSubmit = document.querySelector(".inactive-submit");
+  oceanFormSubmit.classList.add("show-submit");
 
-    animationParams = {
-        breath: 'ocean',
-        // inhale: inhaleInput.value,
-        inhale: 5,
-        // exhale: exhaleInput.value,
-        exhale: 5,
-        // pause: pauseInput.value ? pauseInput.value : 0,
-        pause: 5,
-    };
+  animationParams = {
+    breath: "ocean",
+    // inhale: inhaleInput.value,
+    inhale: 5,
+    // exhale: exhaleInput.value,
+    exhale: 5,
+    // pause: pauseInput.value ? pauseInput.value : 0,
+    pause: 5,
+  };
 
-    formSubmit(animationParams);
 };
 
 const fireBreathForm = () => {
-    // if selected add the descriptor to the modal and
-    // append submit button - defaults for animations
+  // if selected add the descriptor to the modal and
+  // append submit button - defaults for animations
 
-    let descriptorPar = document.querySelector('.selected-breath-description');
-    descriptorPar.innerHTML = `
+  let descriptorPar = document.querySelector(".selected-breath-description");
+  descriptorPar.innerHTML = `
     <p class='breath-descriptor'>
         Kapalabhati, or skull shining breath, is a yogic breathing technique aimed to clear the mind, 
         energize the body, and stimulate digestion.  To practice this breath, 
@@ -100,27 +89,26 @@ const fireBreathForm = () => {
         to maintain.  To start your practice, you only need to press the Start button and enjoy your practice.
     </p>`;
 
-    let breathParamsField = document.querySelector('.breath-specific-options');
-    breathParamsField.innerHTML = '';
+  let breathParamsField = document.querySelector(".breath-specific-options");
+  breathParamsField.innerHTML = "";
 
-    animationParams = {
-        breath: 'fire',
-        inhale: 5,
-        exhale: 5,
-        cycle: 60,
-    };
+  animationParams = {
+    breath: "fire",
+    inhale: 5,
+    exhale: 5,
+    cycle: 60,
+  };
 
-    let fireFormSubmit = document.querySelector('.inactive-submit');
-    fireFormSubmit.classList.add('show-submit');
+  let fireFormSubmit = document.querySelector(".inactive-submit");
+  fireFormSubmit.classList.add("show-submit");
 
-    formSubmit(animationParams);
 };
 
 const altBreathForm = () => {
-    // modal descriptor and append for animation details
-    // optional pause time, breath time
-    let descriptorPar = document.querySelector('.selected-breath-description');
-    descriptorPar.innerHTML = `
+  // modal descriptor and append for animation details
+  // optional pause time, breath time
+  let descriptorPar = document.querySelector(".selected-breath-description");
+  descriptorPar.innerHTML = `
     <p class='breath-descriptor'>
         Nadi Shodhana is known as Alternate Nostril Breathing.  As the name might suggest,
         this breath will involve using the hands as a way of restricting the breath in and out of one nostral at a time.
@@ -134,9 +122,9 @@ const altBreathForm = () => {
         which will add an apnea after each inhalation.
     </p>
     `;
-    
-    let breathParamsField = document.querySelector('.breath-specific-options');
-    breathParamsField.innerHTML = `
+
+  let breathParamsField = document.querySelector(".breath-specific-options");
+  breathParamsField.innerHTML = `
         <div class='input-group'>
             <div>
                 <input type="text" name='inhale' class='inhale-input' >
@@ -153,43 +141,45 @@ const altBreathForm = () => {
         </div>
     `;
 
-    animationParams = {
-        breath: 'alternate',
-        // inhale: inhaleInput.value,
-        inhale: 5,
-        // exhale: exhaleInput.value,
-        exhale: 5,
-        // pause: pauseInput.value ? pauseInput.value : 0,
-        pause: 5,
-    };
+  animationParams = {
+    breath: "alternate",
+    // inhale: inhaleInput.value,
+    inhale: 5,
+    // exhale: exhaleInput.value,
+    exhale: 5,
+    // pause: pauseInput.value ? pauseInput.value : 0,
+    pause: 5,
+  };
 
-    let altFormSubmit = document.querySelector('.inactive-submit');
-    altFormSubmit.classList.add('show-submit');
+  let altFormSubmit = document.querySelector(".inactive-submit");
+  altFormSubmit.classList.add("show-submit");
 
-    formSubmit(animationParams);
 };
 
 const radioFormDirector = () => {
-    let radios = document.getElementsByClassName('radio-button');
-    for(let i = 0; i < radios.length; i++){
-        radios[i].addEventListener('change', () => {
-            switch(radios[i].value){
-                case('fire'):
-                    fireBreathForm();
-                    break;
-                case('ocean'):
-                    oceanBreathForm();
-                    break;
-                case('alternate'):
-                    altBreathForm();
-                    break;
-                default:
-                    break;
-            }
-        });
-    }
+  // grabs radio buttons listens to change to render form details
+  let radios = document.getElementsByClassName("radio-button");
+  for (let i = 0; i < radios.length; i++) {
+    radios[i].addEventListener("change", () => {
+      switch (radios[i].value) {
+        case "fire":
+          console.log(radios[i].value);
+          fireBreathForm();
+          break;
+        case "ocean":
+          console.log(radios[i].value);
+          oceanBreathForm();
+          break;
+        case "alternate":
+          console.log(radios[i].value);
+          altBreathForm();
+          break;
+        default:
+          break;
+      }
+    });
+  }
 };
 
-document.addEventListener("DOMContentLoaded", () => {
-    radioFormDirector();
+  radioFormDirector();
 });
