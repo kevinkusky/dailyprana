@@ -7,18 +7,16 @@ let form = document.querySelector(".app-director-form");
 const formSubmit = e => {
     e.preventDefault();
     let modalForm = document.querySelector(".page-wrapper");
-    
-    console.log(animationParams);
-    // prevents mult runnings
-    if (!modalForm) {
-        return null;
-    }
-    
     modalForm.remove();
+    
+    console.log(animationParams); 
     
     let circlePage = document.querySelector(".eventual-circle");
     circlePage.classList.add("circle-page-wrap");
     circlePage.classList.remove("eventual-circle");
+
+    let circleName = document.querySelector('.circle');
+    circleName.classList.add(animationParams.breath);
 };
 
 form.addEventListener("submit", formSubmit);
@@ -63,13 +61,23 @@ const oceanBreathForm = () => {
 
   animationParams = {
     breath: "ocean",
-    // inhale: inhaleInput.value,
-    inhale: 5,
-    // exhale: exhaleInput.value,
-    exhale: 5,
-    // pause: pauseInput.value ? pauseInput.value : 0,
-    pause: 5,
+    inhale: 0,
+    exhale: 0,
+    pause: 0,
   };
+
+  let inhaleInput = document.querySelector('.inhale-input');
+  inhaleInput.addEventListener('change', e => {
+      animationParams.inhale = e.target.value;
+  });
+  let exhaleInput = document.querySelector('.exhale-input');
+  exhaleInput.addEventListener('change', e => {
+      animationParams.exhale = e.target.value;
+  });
+  let pauseInput = document.querySelector('.pause-input');
+  pauseInput.addEventListener('change', e => {
+      animationParams.pause = e.target.value.length > 0 ? e.target.value : 0;
+  });
 
 };
 
@@ -142,18 +150,27 @@ const altBreathForm = () => {
     `;
 
   animationParams = {
-    breath: "alternate",
-    // inhale: inhaleInput.value,
-    inhale: 5,
-    // exhale: exhaleInput.value,
-    exhale: 5,
-    // pause: pauseInput.value ? pauseInput.value : 0,
-    pause: 5,
+    breath: "ocean",
+    inhale: 0,
+    exhale: 0,
+    pause: 0,
   };
+
+  let inhaleInput = document.querySelector('.inhale-input');
+  inhaleInput.addEventListener('change', e => {
+      animationParams.inhale = e.target.value;
+  });
+  let exhaleInput = document.querySelector('.exhale-input');
+  exhaleInput.addEventListener('change', e => {
+      animationParams.exhale = e.target.value;
+  });
+  let pauseInput = document.querySelector('.pause-input');
+  pauseInput.addEventListener('change', e => {
+      animationParams.pause = e.target.value.length > 0 ? e.target.value : 0;
+  });
 
   let altFormSubmit = document.querySelector(".inactive-submit");
   altFormSubmit.classList.add("show-submit");
-
 };
 
 const radioFormDirector = () => {
