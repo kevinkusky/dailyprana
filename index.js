@@ -178,6 +178,7 @@ const radioFormDirector = () => {
   let radios = document.getElementsByClassName("radio-button");
   for (let i = 0; i < radios.length; i++) {
     radios[i].addEventListener("change", () => {
+        // switch will listen for active button
       switch (radios[i].value) {
         case "fire":
           console.log(radios[i].value);
