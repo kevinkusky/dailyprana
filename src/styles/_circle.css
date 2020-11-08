@@ -20,4 +20,18 @@
     border: 10px solid black;
     border-radius: 50%;
     z-index: 20;
+    animation: ocean-breath 5s linear infinite alternate;
+}
+
+@keyframes ocean-breath {
+    from {
+        height: 200px;
+        width: 200px;
+        /* transform: rotateX(180deg); */
+    }
+    to {
+        height: 650px;
+        width: 650px;
+        /* transform: rotateZ(30deg); */
+    }
 }
