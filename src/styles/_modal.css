@@ -96,5 +96,20 @@ body {
 .show-submit {
     display: block;
     margin-top: 20px;
-    margin-left: -93%;
+    margin-left: -84%;
+    height: 58px;
+    width: 86px;
+    background: transparent;
+    border: 1px solid hotpink;
+    border-radius: 10px;
+    font-size: 20px;
+    letter-spacing: 0.1em;
+    color: rgb(79, 13, 46)
+}
+
+.show-submit:hover {
+    background: whitesmoke;
+    color: rgb(153, 26, 26);
+    border-color: rosybrown;
+    cursor: pointer;
 }
