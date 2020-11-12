@@ -17,6 +17,10 @@ const formSubmit = e => {
 
     let circleName = document.querySelector('.circle');
     circleName.classList.add(animationParams.breath);
+    circleName.dataset.inhale = animationParams.inhale;
+    circleName.dataset.exhale = animationParams.exhale;
+    circleName.dataset.pause = animationParams.pause;
+    // console.log(circleName.dataset.inhale);
 };
 
 form.addEventListener("submit", formSubmit);

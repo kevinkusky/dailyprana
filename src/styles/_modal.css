@@ -66,14 +66,17 @@ body {
 .app-instructions {
     margin-top: -20px;
     margin-left: -180px;
-
 }
 
 .breath-specific-options {
     display: flex;
     width: 420px;
     margin-top: -20px;
+}
 
+.input-group {
+    margin-top: -25px;
+    margin-bottom: -22px;
 }
 
 .inhale-input, .exhale-input, .pause-input {
@@ -109,7 +112,7 @@ body {
 
 .show-submit:hover {
     background: whitesmoke;
-    color: rgb(153, 26, 26);
+    color: rgb(131, 99, 99);
     border-color: rosybrown;
     cursor: pointer;
 }
