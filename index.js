@@ -41,12 +41,12 @@ const oceanBreathForm = () => {
                 <label for="inhale">Inhale</label>
             </div>
             <div>
-                <input type="text" name='pause' class='pause-input' >
-                <label for="pause">Pause</label>
-            </div>
-            <div>
                 <input type="text" name='exhale' class='exhale-input'>
                 <label for="exhale">Exhale</label>
+            </div>
+            <div>
+                <input type="text" name='pause' class='pause-input' >
+                <label for="pause">Pause</label>
             </div>
         </div>
     `;
@@ -59,26 +59,26 @@ const oceanBreathForm = () => {
   let oceanFormSubmit = document.querySelector(".inactive-submit");
   oceanFormSubmit.classList.add("show-submit");
 
-  animationParams = {
-    breath: "ocean",
-    inhale: 0,
-    exhale: 0,
-    pause: 0,
-  };
-
+  
   let inhaleInput = document.querySelector('.inhale-input');
   inhaleInput.addEventListener('change', e => {
       animationParams.inhale = e.target.value;
-  });
+    });
   let exhaleInput = document.querySelector('.exhale-input');
   exhaleInput.addEventListener('change', e => {
-      animationParams.exhale = e.target.value;
+        animationParams.exhale = e.target.value;
   });
   let pauseInput = document.querySelector('.pause-input');
   pauseInput.addEventListener('change', e => {
-      animationParams.pause = e.target.value.length > 0 ? e.target.value : 0;
+        animationParams.pause = e.target.value.length > 0 ? e.target.value : 0;
   });
-
+    
+    animationParams = {
+      breath: "ocean",
+      inhale: inhaleInput,
+      exhale: exhaleInput,
+      pause: pauseInput,
+    };
 };
 
 const fireBreathForm = () => {
@@ -139,22 +139,15 @@ const altBreathForm = () => {
                 <label for="inhale">Inhale</label>
             </div>
             <div>
-                <input type="text" name='pause' class='pause-input' >
-                <label for="pause">Pause</label>
-            </div>
-            <div>
                 <input type="text" name='exhale' class='exhale-input'>
                 <label for="exhale">Exhale</label>
             </div>
+            <div>
+                <input type="text" name='pause' class='pause-input' >
+                <label for="pause">Pause</label>
+            </div>
         </div>
     `;
-
-  animationParams = {
-    breath: "alternate",
-    inhale: 0,
-    exhale: 0,
-    pause: 0,
-  };
 
   let inhaleInput = document.querySelector('.inhale-input');
   inhaleInput.addEventListener('change', e => {
@@ -168,6 +161,13 @@ const altBreathForm = () => {
   pauseInput.addEventListener('change', e => {
       animationParams.pause = e.target.value.length > 0 ? e.target.value : 0;
   });
+
+  animationParams = {
+    breath: "alternate",
+    inhale: inhaleInput,
+    exhale: exhaleInput,
+    pause: pauseInput,
+  };
 
   let altFormSubmit = document.querySelector(".inactive-submit");
   altFormSubmit.classList.add("show-submit");
