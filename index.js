@@ -150,7 +150,7 @@ const altBreathForm = () => {
     `;
 
   animationParams = {
-    breath: "ocean",
+    breath: "alternate",
     inhale: 0,
     exhale: 0,
     pause: 0,
