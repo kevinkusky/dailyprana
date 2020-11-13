@@ -75,13 +75,50 @@ body {
 }
 
 .input-group {
-    margin-top: -25px;
-    margin-bottom: -22px;
+    margin-top: -50px;
 }
 
-.inhale-input, .exhale-input, .pause-input {
-    margin: 10px 0px;
+.input-container {
+    margin-top: 15px;
+    position: relative;
 }
+
+.input-group input{
+    margin: 10px 0px;
+    top: -20px;
+     left: 0;
+     padding-left: 3px;
+     border-radius: 6px;
+ }
+
+ .input-group label {
+     position: absolute;
+     top: 0;
+     left: 8px;
+     font-size: 18px;
+     padding: 10px 0;
+     pointer-events: none;
+     color:rgba(98, 139, 145, 0.857);
+     transition: .5s;
+ }
+
+.input-group input:focus,
+.input-group input:valid{
+     top: -20px;
+     left: 0;
+     padding-left: 3px;
+     border: 2.3px solid rgb(91, 128, 223);
+     border-radius: 6px;
+     background-color: whitesmoke;
+     font-size: 15.5px;
+}
+
+ .input-group input:focus ~label,
+ .input-group input:valid ~label{
+     left: -69px;
+     color: rgb(94, 32, 24);
+     background: transparent;
+ }
 
 .breath-descriptor{
     width: 540px;

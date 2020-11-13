@@ -43,16 +43,16 @@ const oceanBreathForm = () => {
   let breathParamsField = document.querySelector(".breath-specific-options");
   breathParamsField.innerHTML = `
         <div class='input-group'>
-            <div>
-                <input type="text" name='inhale' class='inhale-input' >
+            <div class='input-container'>
+                <input type="text" name='inhale' class='inhale-input' required=' '>
                 <label for="inhale">Inhale</label>
             </div>
-            <div>
-                <input type="text" name='exhale' class='exhale-input'>
+            <div class='input-container'>
+                <input type="text" name='exhale' class='exhale-input' required=' '>
                 <label for="exhale">Exhale</label>
             </div>
-            <div>
-                <input type="text" name='pause' class='pause-input' >
+            <div class='input-container'>
+                <input type="text" name='pause' class='pause-input' required=' '>
                 <label for="pause">Pause</label>
             </div>
         </div>
@@ -90,8 +90,6 @@ const oceanBreathForm = () => {
 
 // Fire breath specifications
 const fireBreathForm = () => {
-  // if selected add the descriptor to the modal and
-  // append submit button - defaults for animations
 
   let descriptorPar = document.querySelector(".selected-breath-description");
   descriptorPar.innerHTML = `
@@ -144,16 +142,16 @@ const altBreathForm = () => {
   let breathParamsField = document.querySelector(".breath-specific-options");
   breathParamsField.innerHTML = `
         <div class='input-group'>
-            <div>
-                <input type="text" name='inhale' class='inhale-input' >
+            <div class='input-container'>
+                <input type="text" name='inhale' class='inhale-input' required=' '>
                 <label for="inhale">Inhale</label>
             </div>
-            <div>
-                <input type="text" name='exhale' class='exhale-input'>
+            <div class='input-container'>
+                <input type="text" name='exhale' class='exhale-input' required=' '>
                 <label for="exhale">Exhale</label>
             </div>
-            <div>
-                <input type="text" name='pause' class='pause-input' >
+            <div class='input-container'>
+                <input type="text" name='pause' class='pause-input' required=' '>
                 <label for="pause">Pause</label>
             </div>
         </div>
