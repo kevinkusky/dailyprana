@@ -82,6 +82,18 @@
     }
 }
 
+/* 2 iterations of normal breath to prep */
+@keyframes fire-prep {
+    from {
+        height: 200px;
+        width: 200px;
+    }
+    to {
+        height: 650px;
+        width: 650px;
+    }
+}
+
 @keyframes fire-breath {
     from {
         height: 650px;
@@ -118,12 +130,3 @@
         height: 300px;
     }
 }
-
-/* @keyframes alt-breath {
-    from {
-
-    }
-    to {
-
-    }
-} */

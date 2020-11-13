@@ -1,9 +1,9 @@
 document.addEventListener("DOMContentLoaded", () => {
 
 let animationParams;
-
 let form = document.querySelector(".app-director-form");
 
+// Handle Submit for taking user data and informing animations
 const formSubmit = e => {
     e.preventDefault();
     let modalForm = document.querySelector(".page-wrapper");
@@ -17,14 +17,17 @@ const formSubmit = e => {
 
     let circleName = document.querySelector('.circle');
     circleName.classList.add(animationParams.breath);
+
+    // if animationParams.cycle
     circleName.dataset.inhale = animationParams.inhale;
     circleName.dataset.exhale = animationParams.exhale;
     circleName.dataset.pause = animationParams.pause;
-    // console.log(circleName.dataset.inhale);
 };
 
 form.addEventListener("submit", formSubmit);
 
+
+// Specifications for Ujjayi Breathing
 const oceanBreathForm = () => {
   let descriptorPar = document.querySelector(".selected-breath-description");
   descriptorPar.innerHTML = `
@@ -85,6 +88,7 @@ const oceanBreathForm = () => {
     };
 };
 
+// Fire breath specifications
 const fireBreathForm = () => {
   // if selected add the descriptor to the modal and
   // append submit button - defaults for animations
@@ -104,6 +108,7 @@ const fireBreathForm = () => {
   let breathParamsField = document.querySelector(".breath-specific-options");
   breathParamsField.innerHTML = "";
 
+//   No user choice for this breath - current placeholder until more complete.
   animationParams = {
     breath: "fire",
     inhale: 5,
@@ -116,6 +121,7 @@ const fireBreathForm = () => {
 
 };
 
+// Alt Nost Breathing Specifications 
 const altBreathForm = () => {
   // modal descriptor and append for animation details
   // optional pause time, breath time
@@ -177,23 +183,24 @@ const altBreathForm = () => {
   altFormSubmit.classList.add("show-submit");
 };
 
+// Listens to Radio buttons and dynamically renders HTML
 const radioFormDirector = () => {
-  // grabs radio buttons listens to change to render form details
   let radios = document.getElementsByClassName("radio-button");
+
   for (let i = 0; i < radios.length; i++) {
     radios[i].addEventListener("change", () => {
         // switch will listen for active button
       switch (radios[i].value) {
         case "fire":
-          console.log(radios[i].value);
+        //   console.log(radios[i].value);
           fireBreathForm();
           break;
         case "ocean":
-          console.log(radios[i].value);
+        //   console.log(radios[i].value);
           oceanBreathForm();
           break;
         case "alternate":
-          console.log(radios[i].value);
+        //   console.log(radios[i].value);
           altBreathForm();
           break;
         default:
