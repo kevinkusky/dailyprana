@@ -37,18 +37,14 @@
     /* background: transparent; */
     border-radius: 50%;
     z-index: 20;
+    animation: ocean-breath 7s linear infinite alternate;
+
 }
 
 .fire {
     width: 200px;
     height: 200px;
-    /* border-width: 150px;
-    border-style: solid;
-    border-image: -webkit-linear-gradient(
-        180deg, rgb(0, 143, 104), rgb(250, 224, 66)
-    ); */
     border: 10px solid black;
-    /* background: transparent; */
     border-radius: 50%;
     z-index: 20;
     animation: fire-prep 5s linear 1,
@@ -59,13 +55,7 @@
 .alternate {
     width: 200px;
     height: 200px;
-    /* border-width: 150px;
-    border-style: solid;
-    border-image: -webkit-linear-gradient(
-        180deg, rgb(0, 143, 104), rgb(250, 224, 66)
-    ); */
     border: 10px solid black;
-    /* background: transparent; */
     border-radius: 50%;
     z-index: 20;
     /* animation: right-nose 7s linear infinite alternate; */
@@ -83,7 +73,6 @@
     }
 }
 
-/* 2 iterations of normal breath to prep */
 @keyframes fire-prep {
     from {
         height: 200px;

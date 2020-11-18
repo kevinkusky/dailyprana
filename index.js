@@ -82,7 +82,6 @@ const oceanBreathForm = () => {
   let oceanFormSubmit = document.querySelector(".inactive-submit");
   oceanFormSubmit.classList.add("show-submit");
 
-  
   let inhaleInput = document.querySelector('.inhale-input');
   inhaleInput.addEventListener('change', e => {
       animationParams.inhale = e.target.value;
@@ -126,14 +125,13 @@ const fireBreathForm = () => {
 //   No user choice for this breath - current placeholder until more complete.
   animationParams = {
     breath: "fire",
-    inhale: 5,
-    exhale: 5,
-    cycle: 60,
+    // inhale: 5,
+    // exhale: 5,
+    // cycle: 60,
   };
 
   let fireFormSubmit = document.querySelector(".inactive-submit");
   fireFormSubmit.classList.add("show-submit");
-
 };
 
 // Alt Nost Breathing Specifications 
