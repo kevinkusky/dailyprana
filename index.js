@@ -15,13 +15,15 @@ const circleDirections = params => {
         case 'alternate':
             circleName.style.animation = ``;
             break;
+        case 'fire':
+            break;
         default:
             break;
                 
     }
 };
         
-    // Handle Submit for taking user data and informing animations
+// Handle Submit for taking user data and informing animations
 const formSubmit = e => {
     e.preventDefault();
     let modalForm = document.querySelector(".page-wrapper");
@@ -41,7 +43,6 @@ const formSubmit = e => {
 };
 
 form.addEventListener("submit", formSubmit);
-
 
 // Specifications for Ujjayi Breathing
 const oceanBreathForm = () => {
@@ -174,10 +175,12 @@ const altBreathForm = () => {
   inhaleInput.addEventListener('change', e => {
       animationParams.inhale = e.target.value;
   });
+
   let exhaleInput = document.querySelector('.exhale-input');
   exhaleInput.addEventListener('change', e => {
       animationParams.exhale = e.target.value;
   });
+
   let pauseInput = document.querySelector('.pause-input');
   pauseInput.addEventListener('change', e => {
       animationParams.pause = e.target.value.length > 0 ? e.target.value : 0;
@@ -203,15 +206,12 @@ const radioFormDirector = () => {
         // switch will listen for active button
       switch (radios[i].value) {
         case "fire":
-        //   console.log(radios[i].value);
           fireBreathForm();
           break;
         case "ocean":
-        //   console.log(radios[i].value);
           oceanBreathForm();
           break;
         case "alternate":
-        //   console.log(radios[i].value);
           altBreathForm();
           break;
         default:
