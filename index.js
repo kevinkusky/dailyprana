@@ -9,19 +9,17 @@ const formSubmit = e => {
     let modalForm = document.querySelector(".page-wrapper");
     modalForm.remove();
     
-    console.log(animationParams); 
-    
     let circlePage = document.querySelector(".eventual-circle");
     circlePage.classList.add("circle-page-wrap");
     circlePage.classList.remove("eventual-circle");
-
+    
     let circleName = document.querySelector('.circle');
-    circleName.classList.add(animationParams.breath);
-
+    let {breath, inhale, exhale, pause} = animationParams;
+    circleName.classList.add(breath);
+    
+    console.log(animationParams); 
     // if animationParams.cycle
-    circleName.dataset.inhale = animationParams.inhale;
-    circleName.dataset.exhale = animationParams.exhale;
-    circleName.dataset.pause = animationParams.pause;
+    circleName.style.animation = `${breath}-breath ${inhale}s linear infinite alternate`;
 };
 
 form.addEventListener("submit", formSubmit);
