@@ -3,7 +3,25 @@ document.addEventListener("DOMContentLoaded", () => {
 let animationParams;
 let form = document.querySelector(".app-director-form");
 
-// Handle Submit for taking user data and informing animations
+const circleDirections = params => {
+    let {breath, inhale, exhale, pause} = params;
+    let circleName = document.querySelector('.circle');
+    circleName.classList.add(breath);
+    
+    switch(breath){
+        case 'ocean':
+            circleName.style.animation = `${breath}-breath ${inhale}s linear infinite alternate`;
+            break;
+        case 'alternate':
+            circleName.style.animation = ``;
+            break;
+        default:
+            break;
+                
+    }
+};
+        
+    // Handle Submit for taking user data and informing animations
 const formSubmit = e => {
     e.preventDefault();
     let modalForm = document.querySelector(".page-wrapper");
@@ -13,13 +31,13 @@ const formSubmit = e => {
     circlePage.classList.add("circle-page-wrap");
     circlePage.classList.remove("eventual-circle");
     
+    // leave until circleDirections complete
     let circleName = document.querySelector('.circle');
     let {breath, inhale, exhale, pause} = animationParams;
     circleName.classList.add(breath);
-    
-    console.log(animationParams); 
-    // if animationParams.cycle
-    circleName.style.animation = `${breath}-breath ${inhale}s linear infinite alternate`;
+   
+    // pass params to directions function to dynamically control animations
+    // circleDirections(animationParams);
 };
 
 form.addEventListener("submit", formSubmit);
