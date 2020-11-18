@@ -117,6 +117,7 @@ const fireBreathForm = () => {
         The exhalation is a forceful contracting of the abdomen, while the inhale is more of a passive and automatic response to the exhale.
         While the cues should assist, the intention should be to follow a steady and rigorous rythm that is not strenuous 
         to maintain.  To start your practice, you only need to press the Start button and enjoy your practice.
+        <a target='_blank' href='https://youtu.be/y364TyKk5Fg?t=131'>Follow video for further instruction</a>
     </p>`;
 
   let breathParamsField = document.querySelector(".breath-specific-options");
@@ -145,13 +146,11 @@ const altBreathForm = () => {
         Nadi Shodhana is known as Alternate Nostril Breathing.  As the name might suggest,
         this breath will involve using the hands as a way of restricting the breath in and out of one nostral at a time.
         This type of breathing can help balance the hemispheres of the brain as well as help focus the mind and purify
-        the central nervous system. This is a great practice to add before a meditation practice.  To practice this breath
-        a good cue is to place your pointer and middle fingers in the spot your eyebrows would meet and to utilize
-        the thumb and knuckle of your ring finger to block each side of your nose as necissary.  As a suggestion,
+        the central nervous system. This is a great breath to practice before a meditation practice. As a suggestion,
         begin your practice with an inhale from the left nostral with your right thumb blocking the right nasal passage.
-        Each inhale is to be followed with an exhale through the opposite nostral.  
-        To start your practice, please fill our the form for inhale and exhale times.  Also, there is an optional pause time
-        which will add an apnea after each inhalation.
+        Each inhale is to be followed with an exhale through the opposite nostral. To start your practice, please fill out 
+        the form for inhale and exhale times.  Also, there is an optional pause time which will add an apnea after each inhalation.
+        <a target='_blank' href='https://youtu.be/l11qFpRqhIQ?t=122'>Follow video for further instruction</a>
     </p>
     `;
 

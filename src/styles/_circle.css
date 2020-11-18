@@ -53,7 +53,7 @@
     z-index: 20;
     animation: fire-prep 5s linear 1,
             fire-prep 5s 5s linear 2 alternate-reverse,
-            fire-breath 0.5s 15.5s linear 120 alternate;
+            fire-breath 0.7s 15.5s linear 120 alternate;
 }
 
 .alternate {
