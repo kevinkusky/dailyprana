@@ -37,7 +37,7 @@
     /* background: transparent; */
     border-radius: 50%;
     z-index: 20;
-    animation: ocean-breath 7s linear infinite alternate;
+    /* animation: ocean-breath 7s linear infinite alternate; */
 
 }
 
@@ -60,17 +60,6 @@
     z-index: 20;
     /* animation: right-nose 7s linear infinite alternate; */
     animation: left-nose 7s linear infinite alternate;
-}
-
-@keyframes ocean-breath {
-    from {
-        height: 200px;
-        width: 200px;
-    }
-    to {
-        height: 650px;
-        width: 650px;
-    }
 }
 
 @keyframes fire-prep {

@@ -4,13 +4,38 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const circleDirections = params => {
         let {breath, inhale, exhale, pause} = params;
+        inhale = parseInt(inhale);
+        exhale = parseInt(exhale);
+        pause = parseInt(pause);
+
         let circleName = document.querySelector('.circle');
         circleName.classList.add(breath);
         
         switch(breath){
             case 'ocean':
+                const totTime = inhale + exhale + pause + pause;
+
+                console.log(totTime);
+                let keyFrame = `
+                    @keyframes ocean-breath {
+                        0%, ${( (( totTime - pause ) / totTime ) * 100 )}%, 100% {
+                            height: 200px;
+                            width: 200px;
+                        }
+                        ${( ( inhale / totTime ) * 100 )}%, ${( ( ( inhale + pause ) / totTime ) * 100 )}% {
+                            height: 650px;
+                            width: 650px;
+                        }
+                    }
+                `;
+
+                let style = document.createElement('style');
+                style.type = 'text/css';
+                style.innerHTML = keyFrame;
+                document.getElementsByTagName('head')[0].appendChild(style);
+
                 circleName.style.animation = `
-                    ${breath}-breath ${inhale}s ${pause}s linear infinite alternate
+                    ocean-breath ${totTime}s linear infinite
                 `;
                 break;
             case 'alternate':
@@ -39,7 +64,7 @@ document.addEventListener("DOMContentLoaded", () => {
         circleName.classList.add(breath);
     
         // pass params to directions function to dynamically control animations
-        // circleDirections(animationParams);
+        circleDirections(animationParams);
     };
 
     form.addEventListener("submit", formSubmit);
