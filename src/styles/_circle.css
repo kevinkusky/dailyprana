@@ -59,7 +59,7 @@
     border-radius: 50%;
     z-index: 20;
     /* animation: right-nose 7s linear infinite alternate; */
-    animation: left-nose 7s linear infinite alternate;
+    /* animation: left-nose 7s linear infinite alternate; */
 }
 
 @keyframes fire-prep {
@@ -84,7 +84,7 @@
     }
 }
 
-@keyframes right-nose {
+/* @keyframes right-nose {
     from {
         padding-right: 0;
         height: 200px;
@@ -108,4 +108,4 @@
         width: 600px;
         height: 300px;
     }
-}
+} */

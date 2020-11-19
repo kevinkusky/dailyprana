@@ -8,15 +8,21 @@ document.addEventListener("DOMContentLoaded", () => {
         exhale = parseInt(exhale);
         pause = parseInt(pause);
 
+        let totTime, keyFrame;
+
+        let style = document.createElement('style');
+        style.type = 'text/css';
+
         let circleName = document.querySelector('.circle');
         circleName.classList.add(breath);
         
         switch(breath){
             case 'ocean':
-                const totTime = inhale + exhale + pause + pause;
+                // Counts pause time for both inhale and exhale
+                totTime = inhale + exhale + ( 2 * pause );
 
-                console.log(totTime);
-                let keyFrame = `
+                // keyframe variable utilizes time params to calc %s allowing pausing to function
+                keyFrame = `
                     @keyframes ocean-breath {
                         0%, ${( (( totTime - pause ) / totTime ) * 100 )}%, 100% {
                             height: 200px;
@@ -29,8 +35,6 @@ document.addEventListener("DOMContentLoaded", () => {
                     }
                 `;
 
-                let style = document.createElement('style');
-                style.type = 'text/css';
                 style.innerHTML = keyFrame;
                 document.getElementsByTagName('head')[0].appendChild(style);
 
@@ -39,7 +43,35 @@ document.addEventListener("DOMContentLoaded", () => {
                 `;
                 break;
             case 'alternate':
-                circleName.style.animation = ``;
+                // per side params => double time
+                totTime = ( 2 * inhale ) + ( 2 * exhale ) + ( 4 * pause );
+                console.log(totTime);
+                
+                keyFrame = `
+                    @keyframes alt-breath {
+                        0%, 50%, ${( 50 + (pause/totTime) * 100)}%, ${( 100 - (pause/totTime) * 100 )}%, 100% {
+                            width: 200px;
+                            height: 200px;
+                        }
+                        ${( ( inhale / totTime ) * 100 )}%, ${( (( inhale + pause )/totTime) * 100 )}% {
+                            width: 600px;
+                            height: 300px;
+                            margin-left: 400px;
+                        }
+                        ${( 50 + (( inhale / totTime ) * 100) )}%, ${( 50 + ((( inhale + pause )/totTime) * 100 ))}% {
+                            width: 600px;
+                            height: 300px;
+                            margin-right: 400px;
+                        }
+                    }
+                `;
+
+                style.innerHTML = keyFrame;
+                document.getElementsByTagName('head')[0].appendChild(style);
+
+                circleName.style.animation = `
+                    alt-breath ${totTime}s linear infinite
+                `;
                 break;
             case 'fire':
                 break;
