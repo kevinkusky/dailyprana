@@ -8,12 +8,12 @@ document.addEventListener("DOMContentLoaded", () => {
         exhale = parseInt(exhale);
         pause = parseInt(pause);
 
-        let totTime, keyFrame;
+        let totTime, keyFrame, style, circleName;
 
-        let style = document.createElement('style');
+        style = document.createElement('style');
         style.type = 'text/css';
 
-        let circleName = document.querySelector('.circle');
+        circleName = document.querySelector('.circle');
         circleName.classList.add(breath);
         
         switch(breath){
@@ -22,18 +22,19 @@ document.addEventListener("DOMContentLoaded", () => {
                 totTime = inhale + exhale + ( 2 * pause );
 
                 // keyframe variable utilizes time params to calc %s allowing pausing to function
-                keyFrame = `
-                    @keyframes ocean-breath {
-                        0%, ${( (( totTime - pause ) / totTime ) * 100 )}%, 100% {
-                            height: 200px;
-                            width: 200px;
-                        }
-                        ${( ( inhale / totTime ) * 100 )}%, ${( ( ( inhale + pause ) / totTime ) * 100 )}% {
-                            height: 650px;
-                            width: 650px;
-                        }
+                keyFrame = `@keyframes ocean-breath {
+                    0%,
+                    ${( (( totTime - pause ) / totTime ) * 100 )}%,
+                    100% {
+                        height: 200px;
+                        width: 200px;
                     }
-                `;
+                    ${( ( inhale / totTime ) * 100 )}%,
+                    ${( ( ( inhale + pause ) / totTime ) * 100 )}% {
+                        height: 650px;
+                        width: 650px;
+                    }
+                }`;
 
                 style.innerHTML = keyFrame;
                 document.getElementsByTagName('head')[0].appendChild(style);
@@ -47,24 +48,28 @@ document.addEventListener("DOMContentLoaded", () => {
                 totTime = ( 2 * inhale ) + ( 2 * exhale ) + ( 4 * pause );
                 console.log(totTime);
                 
-                keyFrame = `
-                    @keyframes alt-breath {
-                        0%, 50%, ${( 50 + (pause/totTime) * 100)}%, ${( 100 - (pause/totTime) * 100 )}%, 100% {
-                            width: 200px;
-                            height: 200px;
-                        }
-                        ${( ( inhale / totTime ) * 100 )}%, ${( (( inhale + pause )/totTime) * 100 )}% {
-                            width: 600px;
-                            height: 300px;
-                            margin-left: 400px;
-                        }
-                        ${( 50 + (( inhale / totTime ) * 100) )}%, ${( 50 + ((( inhale + pause )/totTime) * 100 ))}% {
-                            width: 600px;
-                            height: 300px;
-                            margin-right: 400px;
-                        }
+                keyFrame = `@keyframes alt-breath {
+                    0%,
+                    50%,
+                    ${( 50 + ((pause/totTime) * 100))}%,
+                    ${( 100 - ((pause/totTime) * 100 ))}%,
+                    100% {
+                        width: 200px; 
+                        height: 200px;
                     }
-                `;
+                    ${( ( inhale / totTime ) * 100 )}%,
+                    ${( (( inhale + pause )/totTime) * 100 )}% {
+                        width: 600px;
+                        height: 300px;
+                        margin-left: 400px;
+                    }
+                    ${( 50 + (( inhale / totTime ) * 100) )}%,
+                    ${( 50 + ((( inhale + pause )/totTime) * 100) )}% {
+                        width: 600px;
+                        height: 300px;
+                        margin-right: 400px;
+                    }
+                }`;
 
                 style.innerHTML = keyFrame;
                 document.getElementsByTagName('head')[0].appendChild(style);
@@ -116,21 +121,21 @@ document.addEventListener("DOMContentLoaded", () => {
 
         let breathParamsField = document.querySelector(".breath-specific-options");
         breathParamsField.innerHTML = `
-                <div class='input-group'>
-                    <div class='input-container'>
-                        <input type="text" name='inhale' class='inhale-input' required=' '>
-                        <label for="inhale">Inhale</label>
-                    </div>
-                    <div class='input-container'>
-                        <input type="text" name='exhale' class='exhale-input' required=' '>
-                        <label for="exhale">Exhale</label>
-                    </div>
-                    <div class='input-container'>
-                        <input type="text" name='pause' class='pause-input' required=' '>
-                        <label for="pause">Pause</label>
-                    </div>
+            <div class='input-group'>
+                <div class='input-container'>
+                    <input type="text" name='inhale' class='inhale-input' required=' '>
+                    <label for="inhale">Inhale</label>
                 </div>
-            `;
+                <div class='input-container'>
+                    <input type="text" name='exhale' class='exhale-input' required=' '>
+                    <label for="exhale">Exhale</label>
+                </div>
+                <div class='input-container'>
+                    <input type="text" name='pause' class='pause-input' required=' '>
+                    <label for="pause">Pause</label>
+                </div>
+            </div>
+        `;
         // saved incase needed
         // <div>
         //     <input type="text" name='total'>
@@ -174,7 +179,8 @@ document.addEventListener("DOMContentLoaded", () => {
                 While the cues should assist, the intention should be to follow a steady and rigorous rythm that is not strenuous 
                 to maintain.  To start your practice, you only need to press the Start button and enjoy your practice.
                 <a target='_blank' href='https://youtu.be/y364TyKk5Fg?t=131'>Follow video for further instruction</a>
-            </p>`;
+            </p>
+        `;
 
         let breathParamsField = document.querySelector(".breath-specific-options");
         breathParamsField.innerHTML = "";
@@ -207,25 +213,25 @@ document.addEventListener("DOMContentLoaded", () => {
                 the form for inhale and exhale times.  Also, there is an optional pause time which will add an apnea after each inhalation.
                 <a target='_blank' href='https://youtu.be/l11qFpRqhIQ?t=122'>Follow video for further instruction</a>
             </p>
-            `;
+        `;
 
         let breathParamsField = document.querySelector(".breath-specific-options");
         breathParamsField.innerHTML = `
-                <div class='input-group'>
-                    <div class='input-container'>
-                        <input type="text" name='inhale' class='inhale-input' required=' '>
-                        <label for="inhale">Inhale</label>
-                    </div>
-                    <div class='input-container'>
-                        <input type="text" name='exhale' class='exhale-input' required=' '>
-                        <label for="exhale">Exhale</label>
-                    </div>
-                    <div class='input-container'>
-                        <input type="text" name='pause' class='pause-input' required=' '>
-                        <label for="pause">Pause</label>
-                    </div>
+            <div class='input-group'>
+                <div class='input-container'>
+                    <input type="text" name='inhale' class='inhale-input' required=' '>
+                    <label for="inhale">Inhale</label>
                 </div>
-            `;
+                <div class='input-container'>
+                    <input type="text" name='exhale' class='exhale-input' required=' '>
+                    <label for="exhale">Exhale</label>
+                </div>
+                <div class='input-container'>
+                    <input type="text" name='pause' class='pause-input' required=' '>
+                    <label for="pause">Pause</label>
+                </div>
+            </div>
+        `;
 
         let inhaleInput = document.querySelector('.inhale-input');
         inhaleInput.addEventListener('change', e => {
@@ -262,16 +268,14 @@ document.addEventListener("DOMContentLoaded", () => {
                 // switch will listen for active button
                 switch (radios[i].value) {
                     case "fire":
-                    fireBreathForm();
-                    break;
+                        fireBreathForm();
+                        break;
                     case "ocean":
-                    oceanBreathForm();
-                    break;
+                        oceanBreathForm();
+                        break;
                     case "alternate":
-                    altBreathForm();
-                    break;
-                    default:
-                    break;
+                        altBreathForm();
+                        break;
                 }
             });
         }

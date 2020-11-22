@@ -29,6 +29,7 @@
     width: 200px;
     height: 200px;
     border: 10px solid black;
+    /* border: 10px solid #e8d440; */
     /* border-width: 150px;
     border-style: solid;
     border-image-source: linear-gradient(
@@ -47,9 +48,7 @@
     border: 10px solid black;
     border-radius: 50%;
     z-index: 20;
-    animation: fire-prep 5s linear 1,
-            fire-prep 5s 5s linear 2 alternate-reverse,
-            fire-breath 0.7s 15.5s linear 120 alternate;
+    animation: fire-breath 115s linear 3
 }
 
 .alternate {
@@ -58,22 +57,9 @@
     border: 10px solid black;
     border-radius: 50%;
     z-index: 20;
-    /* animation: right-nose 7s linear infinite alternate; */
-    /* animation: left-nose 7s linear infinite alternate; */
 }
 
-@keyframes fire-prep {
-    from {
-        height: 200px;
-        width: 200px;
-    }
-    to {
-        height: 650px;
-        width: 650px;
-    }
-}
-
-@keyframes fire-breath {
+@keyframes fire-pulse {
     from {
         height: 650px;
         width: 650px;
@@ -84,28 +70,25 @@
     }
 }
 
-/* @keyframes right-nose {
-    from {
-        padding-right: 0;
+@keyframes fire-breath {
+    0%, 8.695%, 100% {
         height: 200px;
         width: 200px;
     }
-    to {
-        margin-left: 400px;
-        width: 600px;
-        height: 300px;
+    4.34%, 13.04%, 95.65%{
+        height: 650px;
+        width: 650px;
+    }
+    /* 0%, 8.7%, 8.72%, 98.2%, 100% {
+        height: 200px;
+        width: 200px;
+    }
+    4.34%, 4.4%, 13.04%, 95.65%{
+        height: 650px;
+        width: 650px;
+    } */
+    13.05%{
+        /* animation: fire-pulse 0.7s linear infinite alternate;
+        animation-play-state: running; */
     }
 }
-
-@keyframes left-nose {
-    from {
-        padding-left: 0;
-        height: 200px;
-        width: 200px;
-    }
-    to {
-        margin-right: 400px;
-        width: 600px;
-        height: 300px;
-    }
-} */
