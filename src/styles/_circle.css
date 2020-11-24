@@ -39,7 +39,6 @@
     border-radius: 50%;
     z-index: 20;
     /* animation: ocean-breath 7s linear infinite alternate; */
-
 }
 
 .fire {
@@ -87,8 +86,8 @@
         height: 650px;
         width: 650px;
     } */
-    13.05%{
-        /* animation: fire-pulse 0.7s linear infinite alternate;
-        animation-play-state: running; */
-    }
+    /* 13.05%{
+        animation: fire-pulse 0.7s linear infinite alternate;
+        animation-play-state: running;
+    } */
 }

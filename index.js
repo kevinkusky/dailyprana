@@ -3,6 +3,7 @@ document.addEventListener("DOMContentLoaded", () => {
     let form = document.querySelector(".app-director-form");
 
     const circleDirections = params => {
+        // Destructure params and ensure int for calc
         let {breath, inhale, exhale, pause} = params;
         inhale = parseInt(inhale);
         exhale = parseInt(exhale);
@@ -36,6 +37,7 @@ document.addEventListener("DOMContentLoaded", () => {
                     }
                 }`;
 
+                // adds animation to be picked up by below CSS call
                 style.innerHTML = keyFrame;
                 document.getElementsByTagName('head')[0].appendChild(style);
 
@@ -45,7 +47,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 break;
             case 'alternate':
                 // per side params => double time
-                totTime = ( 2 * inhale ) + ( 2 * exhale ) + ( 4 * pause );
+                totTime =  2 * (inhale + exhale + ( 2 * pause ));
                 console.log(totTime);
                 
                 keyFrame = `@keyframes alt-breath {
@@ -79,27 +81,26 @@ document.addEventListener("DOMContentLoaded", () => {
                 `;
                 break;
             case 'fire':
+                // No user params for breath - break
                 break;
             default:
                 break;
         }
     };
             
-    // Handle Submit for taking user data and informing animations
+    // Handle Submit informing animations per user input
     const formSubmit = e => {
         e.preventDefault();
+
+        // removes the form from the DOM
         let modalForm = document.querySelector(".page-wrapper");
         modalForm.remove();
         
+        // Queries circle div and renames for CSS display
         let circlePage = document.querySelector(".eventual-circle");
         circlePage.classList.add("circle-page-wrap");
         circlePage.classList.remove("eventual-circle");
         
-        // leave until circleDirections complete
-        let circleName = document.querySelector('.circle');
-        let {breath, inhale, exhale, pause} = animationParams;
-        circleName.classList.add(breath);
-    
         // pass params to directions function to dynamically control animations
         circleDirections(animationParams);
     };
@@ -120,6 +121,13 @@ document.addEventListener("DOMContentLoaded", () => {
         `;
 
         let breathParamsField = document.querySelector(".breath-specific-options");
+        // saved incase needed
+        // <div>
+        //     <input type="text" name='total'>
+        //     <label for="total">Total Time</label>
+        // </div>
+
+        // inserts inputs and adds event listeners
         breathParamsField.innerHTML = `
             <div class='input-group'>
                 <div class='input-container'>
@@ -136,27 +144,24 @@ document.addEventListener("DOMContentLoaded", () => {
                 </div>
             </div>
         `;
-        // saved incase needed
-        // <div>
-        //     <input type="text" name='total'>
-        //     <label for="total">Total Time</label>
-        // </div>
-
-        let oceanFormSubmit = document.querySelector(".inactive-submit");
-        oceanFormSubmit.classList.add("show-submit");
 
         let inhaleInput = document.querySelector('.inhale-input');
         inhaleInput.addEventListener('change', e => {
             animationParams.inhale = e.target.value;
         });
+
         let exhaleInput = document.querySelector('.exhale-input');
         exhaleInput.addEventListener('change', e => {
             animationParams.exhale = e.target.value;
         });
+
         let pauseInput = document.querySelector('.pause-input');
         pauseInput.addEventListener('change', e => {
             animationParams.pause = e.target.value.length > 0 ? e.target.value : 0;
         });
+
+        let oceanFormSubmit = document.querySelector(".inactive-submit");
+        oceanFormSubmit.classList.add("show-submit");
         
         animationParams = {
             breath: "ocean",
@@ -185,13 +190,9 @@ document.addEventListener("DOMContentLoaded", () => {
         let breathParamsField = document.querySelector(".breath-specific-options");
         breathParamsField.innerHTML = "";
 
-        //   No user choice for this breath - current placeholder until more complete.
-        animationParams = {
-            breath: "fire",
-            // inhale: 5,
-            // exhale: 5,
-            // cycle: 60,
-        };
+        //   No user choice for this breath
+        // passes name for switches
+        animationParams = { breath: "fire" };
 
         let fireFormSubmit = document.querySelector(".inactive-submit");
         fireFormSubmit.classList.add("show-submit");
@@ -215,6 +216,7 @@ document.addEventListener("DOMContentLoaded", () => {
             </p>
         `;
 
+        // Inserts inputs and adds event listeners
         let breathParamsField = document.querySelector(".breath-specific-options");
         breathParamsField.innerHTML = `
             <div class='input-group'>
