@@ -82,6 +82,37 @@ document.addEventListener("DOMContentLoaded", () => {
                 break;
             case 'fire':
                 // No user params for breath - break
+                let bigArr, littleArr;
+                let aggregator = 0.7/115;
+                let arrayFlag = true;
+                for (let i = 13.05; i <  95.65; i += aggregator){
+                    i = i%;
+                    if (arrayFlag){
+                        bigArr.push(i);
+                    } else {
+                        littleArr.push(i);
+                    }
+                    arrayFlag = !arrayFlag;
+                }
+
+                keyFrame = `@keyframes fire-breath {
+                    0%, 98.2%, 100% {
+                        height: 200px;
+                        width: 200px;
+                    }
+                    4.34%, 4.4% {
+                        height: 650px;
+                        width: 650px;
+                    }
+                    13.05% {
+                        height: 650px;
+                        width: 650px;
+                    }
+                    13.09% {
+                        height: 550px;
+                        width: 550px;
+                    }
+                }`;
                 break;
             default:
                 break;
@@ -190,7 +221,7 @@ document.addEventListener("DOMContentLoaded", () => {
         let breathParamsField = document.querySelector(".breath-specific-options");
         breathParamsField.innerHTML = "";
 
-        //   No user choice for this breath
+        // No user choice for this breath
         // passes name for switches
         animationParams = { breath: "fire" };
 
