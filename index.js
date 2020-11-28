@@ -48,7 +48,7 @@ document.addEventListener("DOMContentLoaded", () => {
             case 'alternate':
                 // per side params => double time
                 totTime =  2 * (inhale + exhale + ( 2 * pause ));
-                console.log(totTime);
+                // console.log(totTime);
                 
                 keyFrame = `@keyframes alt-breath {
                     0%,
@@ -82,11 +82,11 @@ document.addEventListener("DOMContentLoaded", () => {
                 break;
             case 'fire':
                 // No user params for breath - break
-                let bigArr, littleArr;
+                let bigArr, littleArr = [];
                 let aggregator = 0.7/115;
                 let arrayFlag = true;
                 for (let i = 13.05; i <  95.65; i += aggregator){
-                    i = i%;
+                    // i = i;
                     if (arrayFlag){
                         bigArr.push(i);
                     } else {
