@@ -82,19 +82,24 @@ document.addEventListener("DOMContentLoaded", () => {
                 break;
             case 'fire':
                 // No user params for breath - break
-                let bigArr, littleArr = [];
-                let aggregator = 0.7/115;
+                let bigArr = [];
+                let littleArr = [];
+                let aggregator = 0.7/89;
                 let arrayFlag = true;
-                for (let i = 13.05; i <  95.65; i += aggregator){
-                    // i = i;
+                let i = 23.596;
+                while (i < 91.011){
+                    let percent = `${i}%`;
                     if (arrayFlag){
-                        bigArr.push(i);
-                    } else {
-                        littleArr.push(i);
+                        bigArr.push(percent);
+                    }else {
+                        littleArr.push(percent);
                     }
                     arrayFlag = !arrayFlag;
+                    i += aggregator;
                 }
-
+                // console.log(bigArr);
+                // console.log(littleArr);
+            
                 keyFrame = `@keyframes fire-breath {
                     0%, 98.2%, 100% {
                         height: 200px;
@@ -108,7 +113,7 @@ document.addEventListener("DOMContentLoaded", () => {
                         height: 650px;
                         width: 650px;
                     }
-                    13.09% {
+                    `${[...littleArr]}` {
                         height: 550px;
                         width: 550px;
                     }

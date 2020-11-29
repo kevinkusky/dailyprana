@@ -58,7 +58,7 @@
     z-index: 20;
 }
 
-@keyframes fire-pulse {
+/* @keyframes fire-pulse {
     from {
         height: 650px;
         width: 650px;
@@ -67,7 +67,7 @@
         height: 550px;
         width: 550px;
     }
-}
+} */
 
 @keyframes fire-breath {
     0%, 8.695%, 100% {
