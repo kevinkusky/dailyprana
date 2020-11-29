@@ -81,7 +81,9 @@ document.addEventListener("DOMContentLoaded", () => {
                 `;
                 break;
             case 'fire':
-                // No user params for breath - break
+                // while loop allows small %s for pulse effect
+                // to be efficently destructured into the keyframe
+
                 let bigArr = [];
                 let littleArr = [];
                 let aggregator = (0.5/89)*100;
@@ -97,8 +99,6 @@ document.addEventListener("DOMContentLoaded", () => {
                     arrayFlag = !arrayFlag;
                     i += aggregator;
                 }
-                // console.log(bigArr);
-                // console.log(littleArr);
             
                 keyFrame = `@keyframes fire-breath {
                     0%, 14.606%, 17.978% {
@@ -124,8 +124,11 @@ document.addEventListener("DOMContentLoaded", () => {
                 circleName.style.animation = `
                     fire-breath 89s linear infinite
                 `;
+                // keep if allowing user to dictate iteration count
+                // fire-breath 89s linear ${cycle}
                 break;
-            default:
+            default: 
+                // shouldn't get here - break incase
                 break;
         }
     };
