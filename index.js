@@ -84,7 +84,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 // No user params for breath - break
                 let bigArr = [];
                 let littleArr = [];
-                let aggregator = 0.7/89;
+                let aggregator = (0.5/89)*100;
                 let arrayFlag = true;
                 let i = 23.596;
                 while (i < 91.011){
@@ -101,23 +101,29 @@ document.addEventListener("DOMContentLoaded", () => {
                 // console.log(littleArr);
             
                 keyFrame = `@keyframes fire-breath {
-                    0%, 98.2%, 100% {
+                    0%, 14.606%, 17.978% {
                         height: 200px;
                         width: 200px;
                     }
-                    4.34%, 4.4% {
+                    5.618%, 8.99% {
                         height: 650px;
                         width: 650px;
                     }
-                    13.05% {
+                    ${[...bigArr]}{
                         height: 650px;
                         width: 650px;
                     }
-                    `${[...littleArr]}` {
+                    ${[...littleArr]} {
                         height: 550px;
                         width: 550px;
                     }
                 }`;
+                style.innerHTML = keyFrame;
+                document.getElementsByTagName('head')[0].appendChild(style);
+
+                circleName.style.animation = `
+                    fire-breath 89s linear infinite
+                `;
                 break;
             default:
                 break;
