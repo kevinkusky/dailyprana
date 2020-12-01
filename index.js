@@ -47,20 +47,20 @@ document.addEventListener("DOMContentLoaded", () => {
                 break;
             case 'alternate':
                 // per side params => double time
-                totTime =  2 * (inhale + exhale + ( 2 * pause ));
+                totTime =  2 * ( inhale + exhale + (2 * pause) );
                 // console.log(totTime);
                 
                 keyFrame = `@keyframes alt-breath {
                     0%,
                     50%,
-                    ${( 50 + ((pause/totTime) * 100))}%,
-                    ${( 100 - ((pause/totTime) * 100 ))}%,
+                    ${( 50 + ((pause/totTime) * 100) )}%,
+                    ${( 100 - ((pause/totTime) * 100) )}%,
                     100% {
                         width: 200px; 
                         height: 200px;
                     }
-                    ${( ( inhale / totTime ) * 100 )}%,
-                    ${( (( inhale + pause )/totTime) * 100 )}% {
+                    ${( (inhale / totTime) * 100 )}%,
+                    ${( ( (inhale + pause) / totTime ) * 100 )}% {
                         width: 600px;
                         height: 300px;
                         margin-left: 400px;
@@ -73,6 +73,7 @@ document.addEventListener("DOMContentLoaded", () => {
                     }
                 }`;
 
+                // adds animation to be picked up by below CSS call
                 style.innerHTML = keyFrame;
                 document.getElementsByTagName('head')[0].appendChild(style);
 
@@ -86,7 +87,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
                 let bigArr = [];
                 let littleArr = [];
-                let aggregator = (0.5/89)*100;
+
+                // time of pulse vs total time converted to a %
+                let aggregator = (0.3/89)*100;
                 let arrayFlag = true;
                 let i = 23.596;
                 while (i < 91.011){
@@ -105,11 +108,7 @@ document.addEventListener("DOMContentLoaded", () => {
                         height: 200px;
                         width: 200px;
                     }
-                    5.618%, 8.99% {
-                        height: 650px;
-                        width: 650px;
-                    }
-                    ${[...bigArr]}{
+                    5.618%, 8.99%, ${[...bigArr]} {
                         height: 650px;
                         width: 650px;
                     }
@@ -118,13 +117,15 @@ document.addEventListener("DOMContentLoaded", () => {
                         width: 550px;
                     }
                 }`;
+
+                // adds animation to be picked up by below CSS call
                 style.innerHTML = keyFrame;
                 document.getElementsByTagName('head')[0].appendChild(style);
 
                 circleName.style.animation = `
                     fire-breath 89s linear infinite
                 `;
-                // keep if allowing user to dictate iteration count
+                // keep below if allowing user to dictate iteration count
                 // fire-breath 89s linear ${cycle}
                 break;
             default: 
@@ -137,17 +138,35 @@ document.addEventListener("DOMContentLoaded", () => {
     const formSubmit = e => {
         e.preventDefault();
 
+        // Add type check on number params
+        // Handle errors if incorrect
+        let {breath, inhale, exhale, pause} = animationParams;
+        // let pauseInput = document.querySelector('.pause-input');
+        // if (pauseInput.value === ''){
+        //     pauseInput.required = false;
+        //     pauseInput.value = '0'; 
+        //     pause = 0;
+        // }
+        // debugger;
         // removes the form from the DOM
         let modalForm = document.querySelector(".page-wrapper");
         modalForm.remove();
-        
+
         // Queries circle div and renames for CSS display
         let circlePage = document.querySelector(".eventual-circle");
         circlePage.classList.add("circle-page-wrap");
         circlePage.classList.remove("eventual-circle");
-        
-        // pass params to directions function to dynamically control animations
+
+        // if (breath === 'fire'){
+        //     circleDirections(animationParams);
+        // }else if([inhale, exhale, pause].all(val => val.isInteger())){
+        //     circleDirections(animationParams);
+        // }else{
+        //     alert('Inputs must be Integers - Please enter correct values');
+        // }
         circleDirections(animationParams);
+
+        // pass params to directions function to dynamically control animations
     };
 
     form.addEventListener("submit", formSubmit);
@@ -202,7 +221,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
         let pauseInput = document.querySelector('.pause-input');
         pauseInput.addEventListener('change', e => {
-            animationParams.pause = e.target.value.length > 0 ? e.target.value : 0;
+            animationParams.pause = e.target.value;
         });
 
         let oceanFormSubmit = document.querySelector(".inactive-submit");
@@ -235,8 +254,7 @@ document.addEventListener("DOMContentLoaded", () => {
         let breathParamsField = document.querySelector(".breath-specific-options");
         breathParamsField.innerHTML = "";
 
-        // No user choice for this breath
-        // passes name for switches
+        // No user choice for this breath - passes name for switches
         animationParams = { breath: "fire" };
 
         let fireFormSubmit = document.querySelector(".inactive-submit");
@@ -246,7 +264,7 @@ document.addEventListener("DOMContentLoaded", () => {
     // Alt Nost Breathing Specifications 
     const altBreathForm = () => {
         // modal descriptor and append for animation details
-        // optional pause time, breath time
+
         let descriptorPar = document.querySelector(".selected-breath-description");
         descriptorPar.innerHTML = `
             <p class='breath-descriptor'>
@@ -266,15 +284,15 @@ document.addEventListener("DOMContentLoaded", () => {
         breathParamsField.innerHTML = `
             <div class='input-group'>
                 <div class='input-container'>
-                    <input type="text" name='inhale' class='inhale-input' required=' '>
+                    <input type="text" name='inhale' class='inhale-input' required>
                     <label for="inhale">Inhale</label>
                 </div>
                 <div class='input-container'>
-                    <input type="text" name='exhale' class='exhale-input' required=' '>
+                    <input type="text" name='exhale' class='exhale-input' required>
                     <label for="exhale">Exhale</label>
                 </div>
                 <div class='input-container'>
-                    <input type="text" name='pause' class='pause-input' required=' '>
+                    <input type="text" name='pause' class='pause-input' required>
                     <label for="pause">Pause</label>
                 </div>
             </div>
@@ -292,7 +310,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
         let pauseInput = document.querySelector('.pause-input');
         pauseInput.addEventListener('change', e => {
-            animationParams.pause = e.target.value.length > 0 ? e.target.value : 0;
+            animationParams.pause = e.target.value;
         });
 
         animationParams = {
