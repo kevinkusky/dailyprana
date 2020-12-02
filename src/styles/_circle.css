@@ -28,17 +28,9 @@
 .ocean {
     width: 200px;
     height: 200px;
-    /* border: 10px solid black; */
-    border: 10px solid #383627;
-    /* border-width: 150px;
-    border-style: solid;
-    border-image-source: linear-gradient(
-        180deg, rgb(0, 143, 104), rgb(250, 224, 66)
-    ); */
-    /* background: transparent; */
+    border: 10px solid black;
     border-radius: 50%;
     z-index: 20;
-    /* animation: ocean-breath 7s linear infinite alternate; */
 }
 
 .fire {

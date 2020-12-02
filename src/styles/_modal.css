@@ -172,3 +172,9 @@ body {
     border-color: rgb(188, 149, 143);
     cursor: pointer;
 }
+
+.link-icons-group {
+    display: flex;
+    z-index: 30;
+    margin-top: -200px;
+}

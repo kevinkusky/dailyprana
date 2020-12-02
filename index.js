@@ -66,7 +66,7 @@ document.addEventListener("DOMContentLoaded", () => {
                         margin-left: 400px;
                     }
                     ${( 50 + (( inhale / totTime ) * 100) )}%,
-                    ${( 50 + ((( inhale + pause )/totTime) * 100) )}% {
+                    ${( 50 + ((( inhale + pause )/ totTime) * 100) )}% {
                         width: 600px;
                         height: 300px;
                         margin-right: 400px;
@@ -105,11 +105,14 @@ document.addEventListener("DOMContentLoaded", () => {
                 }
             
                 keyFrame = `@keyframes fire-breath {
-                    0%, 15.556%, 17.778%, 97.778%, 100% {
+                    0%,
+                    15.556%, 17.778%,
+                    97.778%, 100% {
                         height: 200px;
                         width: 200px;
                     }
-                    6.667%, 8.889%, ${[...bigPulse]} {
+                    6.667%, 8.889%, 
+                    ${[...bigPulse]} {
                         height: 650px;
                         width: 650px;
                     }
@@ -126,8 +129,6 @@ document.addEventListener("DOMContentLoaded", () => {
                 circleName.style.animation = `
                     fire-breath 90s linear infinite
                 `;
-                // keep below if allowing user to dictate iteration count
-                // fire-breath 89s linear ${cycle}
                 break;
             default: 
                 // shouldn't get here - break incase
@@ -139,8 +140,6 @@ document.addEventListener("DOMContentLoaded", () => {
     const formSubmit = e => {
         e.preventDefault();
 
-        // Add type check on number params
-        // Handle errors if incorrect
         let {breath, inhale, exhale, pause} = animationParams;
         // let pauseInput = document.querySelector('.pause-input');
         // if (pauseInput.value === ''){
