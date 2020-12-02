@@ -85,34 +85,35 @@ document.addEventListener("DOMContentLoaded", () => {
                 // while loop allows small %s for pulse effect
                 // to be efficently destructured into the keyframe
 
-                let bigArr = [];
-                let littleArr = [];
+                let bigPulse = [];
+                let littlePulse = [];
 
                 // time of pulse vs total time converted to a %
-                let aggregator = (0.3/89)*100;
+                let aggregator = ( 0.3 / 90 ) * 100;
                 let arrayFlag = true;
-                let i = 23.596;
-                while (i < 91.011){
+                let i = 24.444;
+
+                while (i < 91.111){
                     let percent = `${i}%`;
                     if (arrayFlag){
-                        bigArr.push(percent);
-                    }else {
-                        littleArr.push(percent);
+                        bigPulse.push(percent);
+                    } else {
+                        littlePulse.push(percent);
                     }
                     arrayFlag = !arrayFlag;
                     i += aggregator;
                 }
             
                 keyFrame = `@keyframes fire-breath {
-                    0%, 14.606%, 17.978% {
+                    0%, 15.556%, 17.778%, 97.778%, 100% {
                         height: 200px;
                         width: 200px;
                     }
-                    5.618%, 8.99%, ${[...bigArr]} {
+                    6.667%, 8.889%, ${[...bigPulse]} {
                         height: 650px;
                         width: 650px;
                     }
-                    ${[...littleArr]} {
+                    ${[...littlePulse]} {
                         height: 550px;
                         width: 550px;
                     }
@@ -123,7 +124,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 document.getElementsByTagName('head')[0].appendChild(style);
 
                 circleName.style.animation = `
-                    fire-breath 89s linear infinite
+                    fire-breath 90s linear infinite
                 `;
                 // keep below if allowing user to dictate iteration count
                 // fire-breath 89s linear ${cycle}
@@ -164,9 +165,9 @@ document.addEventListener("DOMContentLoaded", () => {
         // }else{
         //     alert('Inputs must be Integers - Please enter correct values');
         // }
-        circleDirections(animationParams);
 
         // pass params to directions function to dynamically control animations
+        circleDirections(animationParams);
     };
 
     form.addEventListener("submit", formSubmit);
