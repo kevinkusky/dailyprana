@@ -25,27 +25,11 @@
     transform: rotateZ(290deg);
 } */
 
-.ocean {
+.ocean, .fire, .alternate {
     width: 200px;
     height: 200px;
     border: 10px solid black;
-    border-radius: 50%;
-    z-index: 20;
-}
-
-.fire {
-    width: 200px;
-    height: 200px;
-    border: 10px solid black;
-    border-radius: 50%;
-    z-index: 20;
-    animation: fire-breath 115s linear 3
-}
-
-.alternate {
-    width: 200px;
-    height: 200px;
-    border: 10px solid black;
+    /* border: 2px  rgb(212, 88, 31); */
     border-radius: 50%;
     z-index: 20;
 }

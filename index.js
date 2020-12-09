@@ -42,7 +42,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 document.getElementsByTagName('head')[0].appendChild(style);
 
                 circleName.style.animation = `
-                    ocean-breath ${totTime}s linear infinite
+                    ocean-breath ${totTime}s 3.5s linear infinite
                 `;
                 break;
             case 'alternate':
@@ -78,7 +78,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 document.getElementsByTagName('head')[0].appendChild(style);
 
                 circleName.style.animation = `
-                    alt-breath ${totTime}s linear infinite
+                    alt-breath ${totTime}s 3.5s linear infinite
                 `;
                 break;
             case 'fire':
@@ -110,15 +110,21 @@ document.addEventListener("DOMContentLoaded", () => {
                     97.778%, 100% {
                         height: 200px;
                         width: 200px;
+                        border: 10px solid black; 
+                    }
+                    7.778%, 16.667% {
+                        border: 4px dotted rgb(196, 68, 8);
                     }
                     6.667%, 8.889%, 
                     ${[...bigPulse]} {
+                        border: 10px solid black; 
                         height: 650px;
                         width: 650px;
                     }
                     ${[...littlePulse]} {
                         height: 550px;
                         width: 550px;
+                        border: 6px dashed rgb(212, 88, 31);
                     }
                 }`;
 
@@ -127,7 +133,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 document.getElementsByTagName('head')[0].appendChild(style);
 
                 circleName.style.animation = `
-                    fire-breath 90s linear infinite
+                    fire-breath 90s 3.5s linear infinite
                 `;
                 break;
             default: 
