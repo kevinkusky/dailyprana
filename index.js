@@ -29,11 +29,17 @@ document.addEventListener("DOMContentLoaded", () => {
                     100% {
                         height: 200px;
                         width: 200px;
+                        border: 10px solid black;
+                    }
+                    ${(((inhale + pause + inhale) / 2 ) / totTime) * 100 }%,
+                    ${ ( ( (totTime + totTime - pause) / 2) / totTime) * 100 }% {
+                        border: 2px dashed rgb(42, 121, 134);
                     }
                     ${( ( inhale / totTime ) * 100 )}%,
                     ${( ( ( inhale + pause ) / totTime ) * 100 )}% {
                         height: 650px;
                         width: 650px;
+                        border: 10px solid black;
                     }
                 }`;
 
@@ -42,7 +48,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 document.getElementsByTagName('head')[0].appendChild(style);
 
                 circleName.style.animation = `
-                    ocean-breath ${totTime}s 3.5s linear infinite
+                    ocean-breath ${totTime}s 2s linear infinite
                 `;
                 break;
             case 'alternate':
