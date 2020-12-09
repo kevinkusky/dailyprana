@@ -2,7 +2,6 @@ document.addEventListener("DOMContentLoaded", () => {
     let animationParams;
     let form = document.querySelector(".app-director-form");
 
-    // git test 
     const circleDirections = params => {
         // Destructure params and ensure int for calc
         let {breath, inhale, exhale, pause} = params;
