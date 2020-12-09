@@ -66,18 +66,25 @@ document.addEventListener("DOMContentLoaded", () => {
                         height: 200px;
                         margin-left: 0;
                         margin-right: 0;
+                        border: 10px solid black;
+                    }
+                    ${ (100 + ((pause/totTime) * 100)) / 2 }%,
+                    ${ (200 - ((pause/totTime) * 100)) / 2}% {
+                        border: 5px dotted whitesmoke;
                     }
                     ${( (inhale / totTime) * 100 )}%,
                     ${( ( (inhale + pause) / totTime ) * 100 )}% {
                         width: 600px;
                         height: 300px;
                         margin-left: 400px;
+                        border-right: 5px dashed rgb(125, 75, 145);
                     }
-                    ${( 50 + (( inhale / totTime ) * 100) )}%,
-                    ${( 50 + ((( inhale + pause )/ totTime) * 100) )}% {
+                    ${( 50 + (( (inhale + pause) / totTime ) * 100) )}%,
+                    ${( 50 + ((( inhale + pause + pause )/ totTime) * 100) )}% {
                         width: 600px;
                         height: 300px;
                         margin-right: 400px;
+                        border-left: 5px dashed rgb(125, 75, 145);
                     }
                 }`;
 
