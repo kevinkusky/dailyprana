@@ -17,8 +17,9 @@ body {
     border: 1px solid palegreen;
     height: 82vh;
     width: 84%;
-    margin: 70px;
+    margin: 78px;
     margin-left: 100px;
+    /* margin-right: -100px; */
 }
 
 .app-header {
@@ -38,8 +39,8 @@ body {
 
 .modal-content {
     display: flex;
-    justify-content: space-apart;
-    margin-top: 99px;
+    justify-content: space-evenly;
+    margin-top: 10%;
 }
 
 .form-content {
@@ -85,6 +86,7 @@ body {
     display: flex;
     flex-direction: column;
     width: 289px;
+    margin-left: -1%;
 }
 
 .app-instructions {
@@ -100,6 +102,7 @@ body {
 
 .input-group {
     margin-top: -50px;
+    margin-left: 80px;
 }
 
 .input-container {

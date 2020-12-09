@@ -29,7 +29,6 @@
     width: 200px;
     height: 200px;
     border: 10px solid black;
-    border: 2px  rgb(60, 99, 172);
     border-radius: 50%;
     z-index: 20;
 }
