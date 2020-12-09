@@ -64,6 +64,8 @@ document.addEventListener("DOMContentLoaded", () => {
                     100% {
                         width: 200px; 
                         height: 200px;
+                        margin-left: 0;
+                        margin-right: 0;
                     }
                     ${( (inhale / totTime) * 100 )}%,
                     ${( ( (inhale + pause) / totTime ) * 100 )}% {
