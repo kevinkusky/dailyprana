@@ -54,12 +54,7 @@ document.addEventListener("DOMContentLoaded", () => {
             case 'alternate':
                 // per side params => double time
                 totTime =  2 * ( inhale + exhale + (2 * pause) );
-                console.log(totTime);
-                console.log(((inhale + pause + exhale) / totTime) * 100);
-                console.log((((inhale + exhale) + ((3 / 2) * pause)) / totTime) * 100)
-                console.log((((inhale + exhale + pause + pause) / totTime) * 100))
 
-                
                 keyFrame = `@keyframes alt-breath {
                     0%,
                     ${50 - ((pause / totTime) * 100)}%,
@@ -95,8 +90,6 @@ document.addEventListener("DOMContentLoaded", () => {
                         border: 10px solid black;
                     }
                 }`;
-                // border-right: 5px dashed rgb(125, 75, 145);
-                // border-left: 5px dashed rgb(125, 75, 145);
 
                 // adds animation to be picked up by below CSS call
                 style.innerHTML = keyFrame;
