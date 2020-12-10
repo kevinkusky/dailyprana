@@ -54,13 +54,17 @@ document.addEventListener("DOMContentLoaded", () => {
             case 'alternate':
                 // per side params => double time
                 totTime =  2 * ( inhale + exhale + (2 * pause) );
-                // console.log(totTime);
+                console.log(totTime);
+                console.log(((inhale + pause + exhale) / totTime) * 100);
+                console.log((((inhale + exhale) + ((3 / 2) * pause)) / totTime) * 100)
+                console.log((((inhale + exhale + pause + pause) / totTime) * 100))
+
                 
                 keyFrame = `@keyframes alt-breath {
                     0%,
+                    ${50 - ((pause / totTime) * 100)}%,
                     50%,
-                    ${( 50 + ((pause/totTime) * 100) )}%,
-                    ${( 100 - ((pause/totTime) * 100) )}%,
+                    ${(( totTime - pause) / totTime) * 100 }%,
                     100% {
                         width: 200px; 
                         height: 200px;
@@ -68,32 +72,38 @@ document.addEventListener("DOMContentLoaded", () => {
                         margin-right: 0;
                         border: 10px solid black;
                     }
-                    ${ (100 + ((pause/totTime) * 100)) / 2 }%,
-                    ${ (200 - ((pause/totTime) * 100)) / 2}% {
-                        border: 5px dotted whitesmoke;
-                    }
-                    ${( (inhale / totTime) * 100 )}%,
-                    ${( ( (inhale + pause) / totTime ) * 100 )}% {
+                    ${(inhale / totTime) * 100}%,
+                    ${((inhale + pause) / totTime) * 100}% {
                         width: 600px;
                         height: 300px;
                         margin-left: 400px;
-                        border-right: 5px dashed rgb(125, 75, 145);
+                        border: 10px solid black;
                     }
-                    ${( 50 + (( (inhale + pause) / totTime ) * 100) )}%,
-                    ${( 50 + ((( inhale + pause + pause )/ totTime) * 100) )}% {
+                    ${ ((inhale + (pause / 2)) / totTime) *100}%,
+                    ${ 50 + (((inhale + (pause / 2)) / totTime) * 100)}% {
+                        border: 3px dotted rgb(146, 70, 177);
+                    }
+                    ${ 50 - (((pause/ 2) / totTime) * 100) }%,
+                    ${ ((totTime - (pause / 2)) / totTime) * 100 }% {
+                        border: 3px dotted whitesmoke;
+                    }
+                    ${ 50 + ((inhale / totTime) * 100)}%,
+                    ${ 50 + (((inhale + pause)/ totTime) * 100)}% {
                         width: 600px;
                         height: 300px;
                         margin-right: 400px;
-                        border-left: 5px dashed rgb(125, 75, 145);
+                        border: 10px solid black;
                     }
                 }`;
+                // border-right: 5px dashed rgb(125, 75, 145);
+                // border-left: 5px dashed rgb(125, 75, 145);
 
                 // adds animation to be picked up by below CSS call
                 style.innerHTML = keyFrame;
                 document.getElementsByTagName('head')[0].appendChild(style);
 
                 circleName.style.animation = `
-                    alt-breath ${totTime}s 3.5s linear infinite
+                    alt-breath ${totTime}s 2.5s linear infinite
                 `;
                 break;
             case 'fire':

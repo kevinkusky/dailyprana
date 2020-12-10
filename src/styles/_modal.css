@@ -81,7 +81,7 @@ body {
 
 .radio-button:checked+label {
     color: rgb(255, 105, 183);
-    /* color: rgb(125, 75, 145); */
+    /* color: rgb(146, 70, 177); */
     font-weight: bolder;
     letter-spacing: 0.2em;
     border-bottom: 1px solid whitesmoke;
