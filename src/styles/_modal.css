@@ -78,16 +78,16 @@ body {
 #alt-radio::before {
     position: absolute;
     content: "";
-    height: 12px;
-    width: 12px;
+    height: 12.5px;
+    width: 12.5px;
     border: 1.5px solid rgb(255, 105, 183);
     border-radius: 50%;
     margin-left: -30px;
-    margin-top: -16px;
+    margin-top: -16.8px;
     display: flex;
     align-self: center;
     justify-self: center;
-    transition: 1.3s;
+    transition: 0.8s ease;
 }
 
 .radio-button {
@@ -96,16 +96,22 @@ body {
 }
 
 .radio-button:checked+#fire-radio::before {
-    border: 3px solid whitesmoke;
+    height: 10px;
+    width: 10px;
+    border: 2.5px solid whitesmoke;
     background: linear-gradient(315deg, rgb(155, 107, 18) 29%, rgb(163, 8, 8) 63%);
 }
 
 .radio-button:checked+#ocean-radio::before {
+    height: 10px;
+    width: 10px;
     border: 3px solid whitesmoke;
     background: linear-gradient(315deg, rgb(155, 107, 18) 29%, rgb(57, 140, 207) 63%);
 }
 
 .radio-button:checked+#alt-radio::before {
+    height: 10px;
+    width: 10px;
     border: 3px solid whitesmoke;
     background: linear-gradient(315deg, rgb(209, 176, 115) 29%, rgb(115, 76, 141) 63%);
 }
@@ -124,7 +130,8 @@ body {
     width: 289px;
     height: 100px;
     margin-left: calc(29% - 13vw);
-    transition:ease;
+    margin-top: calc(-11% + 10px);
+    transition: 1.2s;
 }
 
 .app-instructions {
@@ -135,7 +142,7 @@ body {
 .breath-specific-options {
     display: inline-block;
     width: 420px;
-    margin-top: -20px;
+    margin-top: calc(-9% + 10px);
 }
 
 .input-group {
@@ -175,7 +182,7 @@ body {
     font-size: 18px;
     padding: 9px 0;
     pointer-events: none;
-    color: rgba(98, 139, 145, 0.857);
+    color: rgba(71, 90, 59, 0.857);
     transition: 1.2s;
 }
 
@@ -218,10 +225,4 @@ body {
     color: rgb(207, 141, 61);
     border-color: rgb(188, 149, 143);
     cursor: pointer;
-}
-
-.link-icons-group {
-    display: flex;
-    z-index: 30;
-    margin-top: -200px;
 }
