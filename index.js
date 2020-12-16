@@ -74,9 +74,11 @@ document.addEventListener("DOMContentLoaded", () => {
                         margin-left: 400px;
                         border: 10px solid black;
                     }
-                    ${ ((inhale + (pause / 2)) / totTime) *100}%,
-                    ${ 50 + (((inhale + (pause / 2)) / totTime) * 100)}% {
+                    ${ ((inhale + (pause / 2)) / totTime) *100}% {
                         border: 3px dotted rgb(146, 70, 177);
+                    }
+                    ${ 50 + (((inhale + (pause / 2)) / totTime) * 100)}% {
+                        border: 3px dotted rgb(150, 151, 57);
                     }
                     ${ 50 - (((pause/ 2) / totTime) * 100) }%,
                     ${ ((totTime - (pause / 2)) / totTime) * 100 }% {
