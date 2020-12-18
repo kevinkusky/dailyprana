@@ -167,10 +167,13 @@ document.addEventListener("DOMContentLoaded", () => {
 
         if (breath === 'fire') return true;
         if (pause === '') {
+            let pauseInput = document.querySelector('.pause-input');
+            pauseInput.value = '0';
             animationParams.pause = 0;
             pause = 0;
         }
 
+        console.log(pause);
         if([inhale, exhale, pause].every(val => Number.isInteger(val))){
             return true;
         } else {
@@ -182,23 +185,8 @@ document.addEventListener("DOMContentLoaded", () => {
     const formSubmit = e => {
         e.preventDefault();
 
-
-        // if (breath === 'fire'){
-        //     circleDirections(animationParams);
-        // }else if([inhale, exhale, pause].all(val => val.isInteger())){
-        //     circleDirections(animationParams);
-        // }else{
-        //     alert('Inputs must be Integers - Please enter correct values');
-        // }
-
-        // let pauseInput = document.querySelector('.pause-input');
-        // if (pauseInput.value === ''){
-        //     pauseInput.required = false;
-        //     pauseInput.value = '0'; 
-        //     pause = 0;
-        // }
-
         // pass params to directions function to dynamically control animations
+
         if(formValidation(animationParams)){
             // removes the form from the DOM
             let modalForm = document.querySelector(".page-wrapper");
@@ -231,25 +219,31 @@ document.addEventListener("DOMContentLoaded", () => {
         `;
 
         let breathParamsField = document.querySelector(".breath-specific-options");
-        // saved incase needed
-        // <div>
-        //     <input type="text" name='total'>
-        //     <label for="total">Total Time</label>
-        // </div>
 
         // inserts inputs and adds event listeners
         breathParamsField.innerHTML = `
             <div class='input-group'>
                 <div class='input-container'>
-                    <input type="text" name='inhale' class='inhale-input' required=' '>
+                    <input 
+                        type = "text" 
+                        name = 'inhale' 
+                        class = 'inhale-input' 
+                        required
+                    >
                     <label for="inhale">Inhale</label>
                 </div>
                 <div class='input-container'>
-                    <input type="text" name='exhale' class='exhale-input' required=' '>
+                    <input type="text" name='exhale' class='exhale-input' required >
                     <label for="exhale">Exhale</label>
                 </div>
                 <div class='input-container'>
-                    <input type="text" name='pause' class='pause-input' required=' '>
+                    <input 
+                        type = "text" 
+                        name = 'pause' 
+                        class = 'pause-input' 
+                        required
+                        oninvalid = 'value = 0'
+                    >
                     <label for="pause">Pause</label>
                 </div>
             </div>
@@ -338,7 +332,7 @@ document.addEventListener("DOMContentLoaded", () => {
                     <label for="exhale">Exhale</label>
                 </div>
                 <div class='input-container'>
-                    <input type="text" name='pause' class='pause-input' required>
+                    <input type="text" name='pause' class='pause-input' required oninvalid = 'value = 0' >
                     <label for="pause">Pause</label>
                 </div>
             </div>

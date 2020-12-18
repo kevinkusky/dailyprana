@@ -188,7 +188,7 @@ body {
 }
 
 .input-group input:focus ~label,
-.input-group input:valid ~label{
+.input-group input:valid ~label {
      left: -69px;
      color: rgb(234, 234, 30);
      background: transparent;
