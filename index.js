@@ -161,27 +161,27 @@ document.addEventListener("DOMContentLoaded", () => {
                 break;
         }
     };
+
+    const formValidation = params => {
+        let {breath, inhale, exhale, pause} = params;
+
+        if (breath === 'fire') return true;
+        if (pause === '') {
+            animationParams.pause = 0;
+            pause = 0;
+        }
+
+        if([inhale, exhale, pause].every(val => Number.isInteger(val))){
+            return true;
+        } else {
+            return false;
+        }
+    };
             
     // Handle Submit informing animations per user input
     const formSubmit = e => {
         e.preventDefault();
 
-        let {breath, inhale, exhale, pause} = animationParams;
-        // let pauseInput = document.querySelector('.pause-input');
-        // if (pauseInput.value === ''){
-        //     pauseInput.required = false;
-        //     pauseInput.value = '0'; 
-        //     pause = 0;
-        // }
-        // debugger;
-        // removes the form from the DOM
-        let modalForm = document.querySelector(".page-wrapper");
-        modalForm.remove();
-
-        // Queries circle div and renames for CSS display
-        let circlePage = document.querySelector(".eventual-circle");
-        circlePage.classList.add("circle-page-wrap");
-        circlePage.classList.remove("eventual-circle");
 
         // if (breath === 'fire'){
         //     circleDirections(animationParams);
@@ -191,8 +191,28 @@ document.addEventListener("DOMContentLoaded", () => {
         //     alert('Inputs must be Integers - Please enter correct values');
         // }
 
+        // let pauseInput = document.querySelector('.pause-input');
+        // if (pauseInput.value === ''){
+        //     pauseInput.required = false;
+        //     pauseInput.value = '0'; 
+        //     pause = 0;
+        // }
+
         // pass params to directions function to dynamically control animations
-        circleDirections(animationParams);
+        if(formValidation(animationParams)){
+            // removes the form from the DOM
+            let modalForm = document.querySelector(".page-wrapper");
+            modalForm.remove();
+
+            // Queries circle div and renames for CSS display
+            let circlePage = document.querySelector(".eventual-circle");
+            circlePage.classList.add("circle-page-wrap");
+            circlePage.classList.remove("eventual-circle");
+
+            circleDirections(animationParams);
+        } else {
+            alert('Inputs must be Integers - Please enter correct values')
+        }
     };
 
     form.addEventListener("submit", formSubmit);
