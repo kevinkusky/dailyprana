@@ -180,13 +180,13 @@ document.addEventListener("DOMContentLoaded", () => {
             return false;
         }
     };
+
             
     // Handle Submit informing animations per user input
     const formSubmit = e => {
         e.preventDefault();
 
         // pass params to directions function to dynamically control animations
-
         if(formValidation(animationParams)){
             // removes the form from the DOM
             let modalForm = document.querySelector(".page-wrapper");
@@ -204,6 +204,7 @@ document.addEventListener("DOMContentLoaded", () => {
     };
 
     form.addEventListener("submit", formSubmit);
+
 
     const oceanBreathForm = () => {
 
@@ -242,7 +243,6 @@ document.addEventListener("DOMContentLoaded", () => {
                         name = 'pause' 
                         class = 'pause-input' 
                         required
-                        oninvalid = 'value=${0}'
                     >
                     <label for="pause">Pause</label>
                 </div>
@@ -262,6 +262,12 @@ document.addEventListener("DOMContentLoaded", () => {
         let pauseInput = document.querySelector('.pause-input');
         pauseInput.addEventListener('change', e => {
             animationParams.pause = e.target.value;
+        });
+
+        pauseInput.addEventListener('invalid', () => {
+            pauseInput.value = 0;
+            animationParams.pause = 0;
+            alert('Pause Input Defaults to 0 - Please ReSubmit');
         });
 
         let oceanFormSubmit = document.querySelector(".inactive-submit");
@@ -329,7 +335,12 @@ document.addEventListener("DOMContentLoaded", () => {
                     <label for="exhale">Exhale</label>
                 </div>
                 <div class='input-container'>
-                    <input type="text" name='pause' class='pause-input' required oninvalid = 'value = 0' >
+                    <input 
+                        type="text" 
+                        name='pause' 
+                        class='pause-input' 
+                        required 
+                    >
                     <label for="pause">Pause</label>
                 </div>
             </div>
@@ -348,6 +359,12 @@ document.addEventListener("DOMContentLoaded", () => {
         let pauseInput = document.querySelector('.pause-input');
         pauseInput.addEventListener('change', e => {
             animationParams.pause = e.target.value;
+        });
+
+        pauseInput.addEventListener('invalid', () => {
+            pauseInput.value = 0;
+            animationParams.pause = 0;
+            alert('Pause Input Defaults to 0 - Please ReSubmit');
         });
 
         animationParams = {
