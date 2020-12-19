@@ -212,7 +212,7 @@ body {
 
 .show-submit {
     display: block;
-    margin-top: calc( 2% - 5px);
+    margin-top: calc(2% - 5px);
     margin-left: calc(-84% - 100px);
     height: 58px;
     width: 86px;

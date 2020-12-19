@@ -1,6 +1,8 @@
 // Alt Nost Breathing Specifications 
-const altBreathForm = () => {
+export const altBreathForm = () => {
     // modal descriptor and append for animation details
+
+    let animationParams;
 
     let descriptorPar = document.querySelector(".selected-breath-description");
     descriptorPar.innerHTML = `

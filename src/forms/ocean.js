@@ -1,5 +1,6 @@
 // Specifications for Ujjayi Breathing
-const oceanBreathForm = () => {
+export const oceanBreathForm = () => {
+
     let descriptorPar = document.querySelector(".selected-breath-description");
     descriptorPar.innerHTML = `
             <p class='breath-descriptor'>

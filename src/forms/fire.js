@@ -1,5 +1,7 @@
 // Fire breath specifications
-const fireBreathForm = () => {
+export const fireBreathForm = () => {
+    let animationParams;
+
     let descriptorPar = document.querySelector(".selected-breath-description");
     descriptorPar.innerHTML = `
             <p class='breath-descriptor'>
