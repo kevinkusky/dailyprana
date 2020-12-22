@@ -23,6 +23,9 @@ document.addEventListener("DOMContentLoaded", () => {
         
         switch(breath){
             case 'ocean':
+                // this line fixes incorrect color and border behavior 
+                // with no pauseInput from user
+                if (pause === 0) pause = 0.00001;
                 // Counts pause time for both inhale and exhale
                 totTime = inhale + exhale + ( 2 * pause );
 
@@ -57,45 +60,48 @@ document.addEventListener("DOMContentLoaded", () => {
                 break;
             case 'alternate':
                 // per side params => double time
+                if (pause === 0) pause = 0.00001;
                 totTime =  2 * ( inhale + exhale + (2 * pause) );
 
-                keyFrame = `@keyframes alt-breath {
-                    0%,
-                    ${50 - ((pause / totTime) * 100)}%,
-                    50%,
-                    ${(( totTime - pause) / totTime) * 100 }%,
-                    100% {
-                        width: 200px; 
-                        height: 200px;
-                        margin-left: 0;
-                        margin-right: 0;
-                        border: 10px solid black;
+                keyFrame = `
+                    @keyframes alt-breath {
+                        0%,
+                        ${50 - ((pause / totTime) * 100)}%,
+                        50%,
+                        ${(( totTime - pause) / totTime) * 100 }%,
+                        100% {
+                            width: 200px; 
+                            height: 200px;
+                            margin-left: 0;
+                            margin-right: 0;
+                            border: 10px solid black;
+                        }
+                        ${(inhale / totTime) * 100}%,
+                        ${((inhale + pause) / totTime) * 100}% {
+                            width: 600px;
+                            height: 300px;
+                            margin-left: 400px;
+                            border: 10px solid black;
+                        }
+                        ${ ((inhale + (pause / 2)) / totTime) *100}% {
+                            border: 3px dotted rgb(146, 70, 177);
+                        }
+                        ${ 50 + (((inhale + (pause / 2)) / totTime) * 100)}% {
+                            border: 3px dotted rgb(150, 151, 57);
+                        }
+                        ${ 50 - (((pause/ 2) / totTime) * 100) }%,
+                        ${ ((totTime - (pause / 2)) / totTime) * 100 }% {
+                            border: 3px dotted whitesmoke;
+                        }
+                        ${ 50 + ((inhale / totTime) * 100)}%,
+                        ${ 50 + (((inhale + pause)/ totTime) * 100)}% {
+                            width: 600px;
+                            height: 300px;
+                            margin-right: 400px;
+                            border: 10px solid black;
+                        }
                     }
-                    ${(inhale / totTime) * 100}%,
-                    ${((inhale + pause) / totTime) * 100}% {
-                        width: 600px;
-                        height: 300px;
-                        margin-left: 400px;
-                        border: 10px solid black;
-                    }
-                    ${ ((inhale + (pause / 2)) / totTime) *100}% {
-                        border: 3px dotted rgb(146, 70, 177);
-                    }
-                    ${ 50 + (((inhale + (pause / 2)) / totTime) * 100)}% {
-                        border: 3px dotted rgb(150, 151, 57);
-                    }
-                    ${ 50 - (((pause/ 2) / totTime) * 100) }%,
-                    ${ ((totTime - (pause / 2)) / totTime) * 100 }% {
-                        border: 3px dotted whitesmoke;
-                    }
-                    ${ 50 + ((inhale / totTime) * 100)}%,
-                    ${ 50 + (((inhale + pause)/ totTime) * 100)}% {
-                        width: 600px;
-                        height: 300px;
-                        margin-right: 400px;
-                        border: 10px solid black;
-                    }
-                }`;
+                `;
 
                 // adds animation to be picked up by below CSS call
                 style.innerHTML = keyFrame;
@@ -361,11 +367,16 @@ document.addEventListener("DOMContentLoaded", () => {
             animationParams.pause = e.target.value;
         });
 
-        pauseInput.addEventListener('invalid', () => {
+        pauseInput.addEventListener('invalid', (e) => {
+            // e.target.setCustomValidity('Pause Input Defaults to 0 - Please ReSubmit');
             pauseInput.value = 0;
             animationParams.pause = 0;
             alert('Pause Input Defaults to 0 - Please ReSubmit');
         });
+
+        // pauseInput.addEventListener('valid', e => {
+        //     e.target.setCustomValidity('');
+        // })
 
         animationParams = {
             breath: "alternate",
