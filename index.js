@@ -54,6 +54,15 @@ document.addEventListener("DOMContentLoaded", () => {
                 style.innerHTML = keyFrame;
                 document.getElementsByTagName('head')[0].appendChild(style);
 
+                window.addEventListener('keydown', checkWetKeyPress, false);
+                const checkWetKeyPress = key => {
+                    if (key.keyCode == '32') {
+                        const playState = circleName.style.animationPlayState === 'paused' ? 'running' : 'paused';
+
+                        circleName.style.animationPlayState = playState;
+                    }
+                };
+
                 circleName.style.animation = `
                     ocean-breath ${totTime}s 2s linear infinite
                 `;
@@ -106,6 +115,15 @@ document.addEventListener("DOMContentLoaded", () => {
                 // adds animation to be picked up by below CSS call
                 style.innerHTML = keyFrame;
                 document.getElementsByTagName('head')[0].appendChild(style);
+
+                window.addEventListener('keydown', checkAltKeyPress, false);
+                const checkAltKeyPress = key => {
+                    if (key.keyCode == '32') {
+                        const playState = circleName.style.animationPlayState === 'paused' ? 'running' : 'paused';
+
+                        circleName.style.animationPlayState = playState;
+                    }
+                };
 
                 circleName.style.animation = `
                     alt-breath ${totTime}s 2.5s linear infinite
@@ -161,9 +179,19 @@ document.addEventListener("DOMContentLoaded", () => {
                 // adds animation to be picked up by below CSS call
                 style.innerHTML = keyFrame;
                 document.getElementsByTagName('head')[0].appendChild(style);
+                
+                const checkHotKeyPress = key => {
+                    if (key.keyCode == '32'){
+                        console.log('i am the spacebar');
+                        let playState = circleName.style.animationPlayState === 'paused' ? 'running' : 'paused';
+
+                        circleName.style.animationPlayState = playState;
+                    }
+                };
+                document.addEventListener('keydown', checkHotKeyPress, false);
 
                 circleName.style.animation = `
-                    fire-breath 90s 3.5s linear infinite
+                    fire-breath 90s 3.5s linear infinite running
                 `;
                 break;
             default: 
