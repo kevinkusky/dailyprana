@@ -59,6 +59,16 @@ document.addEventListener("DOMContentLoaded", () => {
                         const playState = circleName.style.animationPlayState === 'paused' ? 'running' : 'paused';
 
                         circleName.style.animationPlayState = playState;
+
+                        let modal = document.querySelector(".modal");
+                        let modalDescriptor = document.querySelector(".in-breath-about");
+
+                        if (playState === 'paused') {
+                            modal.style.display = 'inline-block';
+
+                        } else {
+                            modal.style.display = 'none';
+                        }
                     }
                 };
 
@@ -193,10 +203,19 @@ document.addEventListener("DOMContentLoaded", () => {
                 
                 const checkHotKeyPress = key => {
                     if (key.keyCode == '32'){
-                        console.log('i am the spacebar');
                         let playState = circleName.style.animationPlayState === 'paused' ? 'running' : 'paused';
 
                         circleName.style.animationPlayState = playState;
+
+                        let modal = document.querySelector(".modal");
+                        let modalDescriptor = document.querySelector(".in-breath-about");
+
+                        if (playState === 'paused') {
+                            modal.style.display = 'inline-block';
+
+                        } else {
+                            modal.style.display = 'none';
+                        }
                     }
                 };
                 document.addEventListener('keydown', checkHotKeyPress, false);
