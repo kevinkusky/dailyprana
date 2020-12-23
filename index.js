@@ -65,7 +65,20 @@ document.addEventListener("DOMContentLoaded", () => {
 
                         if (playState === 'paused') {
                             modal.style.display = 'inline-block';
-
+                            modalDescriptor.innerHTML = `
+                                <p class='current-animation-descriptor'>
+                                    You are currently practicing the Ujjayi Breath.
+                                    <br>
+                                    <br>
+                                    If you would like to continue, please press the spacebar.
+                                    <br>
+                                    <br>
+                                    If you would like to practice a different breath, please refresh the page.
+                                    <br>
+                                    <br>
+                                    If you'd like to learn more about me or this project, please view the links to the right.
+                                </p>
+                            `;
                         } else {
                             modal.style.display = 'none';
                         }
@@ -138,7 +151,20 @@ document.addEventListener("DOMContentLoaded", () => {
 
                         if (playState === 'paused'){
                             modal.style.display = 'inline-block';
-
+                            modalDescriptor.innerHTML = `
+                                <p class='current-animation-descriptor'>
+                                    You are currently practicing the Nadi Shudhana Breath.
+                                    <br>
+                                    <br>
+                                    If you'd like to continue, please press the spacebar.
+                                    <br>
+                                    <br>
+                                    If you would like to practice a different breath, please refresh the page.
+                                    <br>
+                                    <br>
+                                    If you'd like to learn more about me or this project, please view the links to the right.
+                                </p>
+                            `;
                         } else {
                             modal.style.display = 'none';
                         }
@@ -212,7 +238,20 @@ document.addEventListener("DOMContentLoaded", () => {
 
                         if (playState === 'paused') {
                             modal.style.display = 'inline-block';
-
+                            modalDescriptor.innerHTML = `
+                                <p class='current-animation-descriptor'>
+                                    You are currently practicing Kapalabhati Breath.
+                                    <br>
+                                    <br>
+                                    If you'd like to continue, please press the spacebar.
+                                    <br>
+                                    <br>
+                                    If you would like to practice a different breath, please refresh the page.
+                                    <br>
+                                    <br>
+                                    If you'd like to learn more about me or this project, please view the links to the right.
+                                </p>
+                            `;
                         } else {
                             modal.style.display = 'none';
                         }
