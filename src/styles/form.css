@@ -26,7 +26,7 @@ body {
     left: 50%;
     position: fixed;
     transform: translate(-50%, -50%);
-    background-color: rgba(127, 185, 187, 0.267);
+    background-color: rgba(61, 55, 43, 0.349);
     text-shadow: rgb(226, 191, 126) 1px 1px 11px;
 }
 
@@ -101,7 +101,7 @@ body {
 .radio-button:checked+#fire-radio::before {
     height: 10.5px;
     width: 10.5px;
-    border: 3px solid whitesmoke;
+    border: 3.7px solid whitesmoke;
     background: linear-gradient(315deg, rgb(155, 107, 18) 30%, rgb(163, 8, 8) 66%);
 }
 
@@ -120,10 +120,11 @@ body {
 }
 
 .radio-button:checked+label {
-    color: rgb(165, 29, 99);
-    font-weight: 800;
-    letter-spacing: 0.2em;
+    color: rgb(185, 34, 148);
+    font-weight: bolder;
+    letter-spacing: 0.03em;
     border-bottom: 1px solid whitesmoke;
+    /* text-shadow: rgb(20, 196, 199) 20px 1px 1px 11px; */
 }
 
 .radio-button-group {
@@ -197,15 +198,18 @@ body {
 }
 
 .breath-descriptor{
-    display: block;
+    display: inline-block;
+    position: relative;
     width: calc(110% - 80px);
     margin-left: calc(1.5% - 40px);
-    margin-top: calc(15% - 115px);
-    height: calc(10% + 10px);
-    min-height: 100px;
+    margin-top: calc(10vh - 20%);
+    height: calc(10% - 10px);
+    max-height: 400px !important;
+    min-width: 400px;
     color: whitesmoke;
     background-color: rgba(0, 0, 0, 0.426);
     padding: 12px;
+    overflow: hidden;
     overflow-y: auto;
 }
 
