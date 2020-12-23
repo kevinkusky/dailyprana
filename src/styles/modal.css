@@ -8,15 +8,36 @@
 }
 
 .modal-content {
-    /* display: flex;
-    justify-content: center;
-    align-self: center; */
-    margin-top: 5.5%;
-    margin-left: 15%;
-    /* position: absolute; */
+    display: flex;
+    justify-content: space-between;
+    align-self: center;
+    top: 50%;
+    left: 50%;
+    transform:translate(-50%, -50%);
+    position: fixed;
     border: 1.3px solid;
-    height: calc(100vh - 22%);
-    width: calc(100vh - 10%);
+    height: calc(100vh - 25%);
+    width: calc(100vw - 27%);
     box-shadow: 5px 10px 18px rgb(72, 146, 105);
     z-index: 101;
+    background-color: rgba(26, 2, 2, 0.575);
+}
+
+.about-links {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    height: 100%;
+    margin-right: calc(5% + 15px);
+}
+
+.iconify {
+    font-size: 50px !important;
+    color: whitesmoke;
+    padding: -15px;
+}
+
+.iconify:hover {
+    font-size: 51.5px !important;
+    color:rgb(163, 106, 31)
 }
