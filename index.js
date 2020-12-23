@@ -15,8 +15,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
         let totTime, keyFrame, style, circleName;
 
-        style = document.createElement('style');
-        style.type = 'text/css';
+        styleElement = document.createElement('style');
+        styleElement.type = 'text/css';
 
         circleName = document.querySelector('.circle');
         circleName.classList.add(breath);
@@ -51,10 +51,9 @@ document.addEventListener("DOMContentLoaded", () => {
                 }`;
 
                 // adds animation to be picked up by below CSS call
-                style.innerHTML = keyFrame;
-                document.getElementsByTagName('head')[0].appendChild(style);
+                styleElement.innerHTML = keyFrame;
+                document.getElementsByTagName('head')[0].appendChild(styleElement);
 
-                window.addEventListener('keydown', checkWetKeyPress, false);
                 const checkWetKeyPress = key => {
                     if (key.keyCode == '32') {
                         const playState = circleName.style.animationPlayState === 'paused' ? 'running' : 'paused';
@@ -63,8 +62,10 @@ document.addEventListener("DOMContentLoaded", () => {
                     }
                 };
 
+                window.addEventListener('keydown', checkWetKeyPress, false);
+
                 circleName.style.animation = `
-                    ocean-breath ${totTime}s 2s linear infinite
+                    ocean-breath ${totTime}s 2s linear infinite running
                 `;
                 break;
             case 'alternate':
@@ -113,20 +114,30 @@ document.addEventListener("DOMContentLoaded", () => {
                 `;
 
                 // adds animation to be picked up by below CSS call
-                style.innerHTML = keyFrame;
-                document.getElementsByTagName('head')[0].appendChild(style);
+                styleElement.innerHTML = keyFrame;
+                document.getElementsByTagName('head')[0].appendChild(styleElement);
 
-                window.addEventListener('keydown', checkAltKeyPress, false);
                 const checkAltKeyPress = key => {
                     if (key.keyCode == '32') {
                         const playState = circleName.style.animationPlayState === 'paused' ? 'running' : 'paused';
 
                         circleName.style.animationPlayState = playState;
+
+                        let modal = document.querySelector(".modal");
+                        let modalDescriptor = document.querySelector(".in-breath-about");
+
+                        if (playState === 'paused'){
+                            modal.style.display = 'inline-block';
+
+                        } else {
+                            modal.style.display = 'none';
+                        }
                     }
                 };
+                window.addEventListener('keydown', checkAltKeyPress, false);
 
                 circleName.style.animation = `
-                    alt-breath ${totTime}s 2.5s linear infinite
+                    alt-breath ${totTime}s 2.5s linear infinite running
                 `;
                 break;
             case 'fire':
@@ -177,8 +188,8 @@ document.addEventListener("DOMContentLoaded", () => {
                 }`;
 
                 // adds animation to be picked up by below CSS call
-                style.innerHTML = keyFrame;
-                document.getElementsByTagName('head')[0].appendChild(style);
+                styleElement.innerHTML = keyFrame;
+                document.getElementsByTagName('head')[0].appendChild(styleElement);
                 
                 const checkHotKeyPress = key => {
                     if (key.keyCode == '32'){
@@ -214,8 +225,7 @@ document.addEventListener("DOMContentLoaded", () => {
             return false;
         }
     };
-
-            
+ 
     // Handle Submit informing animations per user input
     const formSubmit = e => {
         e.preventDefault();
@@ -238,7 +248,6 @@ document.addEventListener("DOMContentLoaded", () => {
     };
 
     form.addEventListener("submit", formSubmit);
-
 
     const oceanBreathForm = () => {
 
