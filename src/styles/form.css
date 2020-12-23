@@ -206,6 +206,13 @@ body {
     overflow-y: auto;
 }
 
+.breath-descriptor a {
+    color: rgb(75, 122, 194);
+}
+.breath-descriptor a:hover {
+    color:violet;
+}
+
 .inactive-submit {
     display: none;
     margin-top: 20px;
