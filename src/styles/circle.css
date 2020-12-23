@@ -3,10 +3,10 @@
 }
 
 .circle-page-wrap {
-    background: rgb(0,0,0) url(../../assets/mp-breath-bg.png) 40% 50% no-repeat fixed;
-    background-size: 86% 87%;
+    background: rgb(0,0,0) url(../../assets/mp-breath-bg.png) 50% 50% no-repeat fixed;
+    background-size: 98% 97%;
     width: 100%;
-    height: 100vh;
+    height: 97.9vh;
     opacity: 0.82;
     display: flex;
     justify-content: center;

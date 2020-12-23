@@ -13,7 +13,7 @@ document.addEventListener("DOMContentLoaded", () => {
         exhale = parseInt(exhale);
         pause = parseInt(pause);
 
-        let totTime, keyFrame, style, circleName;
+        let totTime, keyFrame, styleElement, circleName;
 
         styleElement = document.createElement('style');
         styleElement.type = 'text/css';
@@ -39,7 +39,7 @@ document.addEventListener("DOMContentLoaded", () => {
                         border: 10px solid black;
                     }
                     ${(((inhale + pause + inhale) / 2 ) / totTime) * 100 }%,
-                    ${ ( ( (totTime + totTime - pause) / 2) / totTime) * 100 }% {
+                    ${( ( (totTime + totTime - pause) / 2) / totTime) * 100 }% {
                         border: 2px dashed rgb(42, 121, 134);
                     }
                     ${( ( inhale / totTime ) * 100 )}%,
@@ -345,7 +345,7 @@ document.addEventListener("DOMContentLoaded", () => {
                         class = 'pause-input' 
                         required
                     >
-                    <label for="pause">Pause</label>
+                    <label for = "pause">Pause</label>
                 </div>
             </div>
         `;

@@ -124,7 +124,6 @@ body {
     font-weight: bolder;
     letter-spacing: 0.03em;
     border-bottom: 1px solid whitesmoke;
-    /* text-shadow: rgb(20, 196, 199) 20px 1px 1px 11px; */
 }
 
 .radio-button-group {
@@ -217,6 +216,7 @@ body {
     color: rgb(75, 122, 194);
     text-shadow: none;
 }
+
 .breath-descriptor a:hover {
     color:violet;
 }
