@@ -20,11 +20,12 @@ body {
 
 .all-form {
     border: 1px solid palegreen;
-    height: calc(100% - 18vh);
-    width: 87%;
-    margin: calc(10% - 70px);
-    margin-left: 6%;
-    margin-bottom: 0;
+    height: calc(100vh - 23%);
+    width: calc(100vw - 20%);
+    top: 50%;
+    left: 50%;
+    position: fixed;
+    transform: translate(-50%, -50%);
 }
 
 .app-header {
