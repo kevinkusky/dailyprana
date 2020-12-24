@@ -6,6 +6,7 @@ body {
     width: 99%;
 }
 
+
 .page-wrapper {
     display: flex;
     justify-self: center;
@@ -27,7 +28,7 @@ body {
     position: fixed;
     transform: translate(-50%, -50%);
     background-color: rgba(61, 55, 43, 0.349);
-    text-shadow: rgb(226, 191, 126) 2px 2px 13px;
+    text-shadow: rgb(226, 191, 126) 2px 3px 13px;
 }
 
 .app-header {
@@ -36,13 +37,29 @@ body {
     align-items: center;
 }
 
-.app-header span, h2 {
+.app-header span {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     font-weight: 800;
     color: whitesmoke;
     background-color: rgba(0, 0, 0, 0.534);
-    height: 30px;
+    height: 29px;
     padding: 5px;
-    padding-top: 8px;
+    width: 900px;
+    margin-top: -15px;
+}
+
+.app-header h2 {
+    display: flex;
+    justify-content: center;
+    font-weight: 800;
+    color: whitesmoke;
+    background-color: rgba(0, 0, 0, 0.534);
+    height: 55px;
+    width: 290px;
+    padding: 6px;
+    font-size: 47px;
 }
 
 .all-form-content {
@@ -83,7 +100,7 @@ body {
     content: "";
     height: 12.5px;
     width: 12.5px;
-    border: 2.2px solid rgb(172, 60, 125);
+    border: 2.2px solid rgb(235, 131, 226);
     border-radius: 50%;
     margin-left: -30px;
     margin-top: -21.6px;
@@ -134,7 +151,7 @@ body {
     width: 289px;
     height: 100px;
     margin-left: calc(29% - 15vw);
-    margin-top: calc(-11% + 10px);
+    margin-top: calc(-13% - 10px);
     transition: 1.2s;
 }
 
@@ -150,7 +167,7 @@ body {
 }
 
 .input-group {
-    margin-top: calc(-50px - 8px);
+    margin-top: calc(-65px - 9%);
     margin-left: calc(5% + 35px);
 }
 
@@ -224,12 +241,11 @@ body {
 
 .inactive-submit {
     display: none;
-    margin-top: 20px;
 }
 
 .show-submit {
     display: block;
-    margin-top: calc(2% - 5px);
+    margin-top: calc(3% + 15px);
     margin-left: calc(-84% - 100px);
     height: 58px;
     width: 86px;
