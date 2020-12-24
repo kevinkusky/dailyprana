@@ -317,6 +317,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 with some constriction from the back of the throat.  Your exhales can be thought of as trying to fog up a mirror.  
                 To begin your practice, please fill out the form for inhale and exhale times. 
                 If you wish, I have also included a pause time if you wish to add an apnea to your practice.
+                <br>
                 At any time you may press the SPACE BAR key to pause the display and access a menu.
             </p>
         `;
@@ -393,8 +394,9 @@ document.addEventListener("DOMContentLoaded", () => {
                 Next, take a deep inhale to set up the breath which should have the following intentions:
                 The exhalation is a forceful contracting of the abdomen, while the inhale is more of a passive and automatic response to the exhale.
                 While the cues should assist, the intention should be to follow a steady and rigorous rythm that is not strenuous 
-                to maintain.  To start your practice, you only need to press the Start button and enjoy your practice.  At any time you may press the SPACE BAR key
-                to pause the display and access a menu.
+                to maintain.  To start your practice, you only need to press the Start button and enjoy your practice.  
+                <br>
+                At any time you may press the SPACE BAR key to pause the display and access a menu.
                 <br>
                 <a target='_blank' href='https://youtu.be/y364TyKk5Fg?t=131'>Follow video for more in debth breath description</a>
             </p>
@@ -422,6 +424,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 begin your practice with an inhale from the left nostral with your right thumb blocking the right nasal passage.
                 Each inhale is to be followed with an exhale through the opposite nostral. To start your practice, please fill out 
                 the form for inhale and exhale times.  Also, there is an optional pause time which will add an apnea after each inhalation.
+                <br>
                 At any time you may press the SPACE BAR key to pause the display and access a menu.
                 <br>
                 <a target='_blank' href='https://youtu.be/l11qFpRqhIQ?t=122'>Follow video for a more in depth instruction on this breath</a>
