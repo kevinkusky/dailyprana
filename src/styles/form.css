@@ -232,12 +232,12 @@ body {
 }
 
 .breath-descriptor a {
-    color: rgb(75, 122, 194);
+    color: rgb(33, 217, 220);
     text-shadow: none;
 }
 
 .breath-descriptor a:hover {
-    color:violet;
+    color:rgb(234, 234, 30);
 }
 
 .inactive-submit {
