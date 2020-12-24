@@ -19,7 +19,7 @@ body {
 
 .all-form {
     border: 2.5px solid rgb(42, 158, 42);
-    box-shadow: 7px 12px 18px rgb(155, 107, 18);
+    box-shadow: 10px 15px 24px rgb(155, 107, 18);
     height: calc(100vh - 21%);
     width: calc(100vw - 13%);
     top: 50%;
@@ -27,7 +27,7 @@ body {
     position: fixed;
     transform: translate(-50%, -50%);
     background-color: rgba(61, 55, 43, 0.349);
-    text-shadow: rgb(226, 191, 126) 1px 1px 11px;
+    text-shadow: rgb(226, 191, 126) 2px 2px 13px;
 }
 
 .app-header {
@@ -120,10 +120,11 @@ body {
 }
 
 .radio-button:checked+label {
-    color: rgb(185, 34, 148);
+    color: rgb(235, 131, 226);
     font-weight: bolder;
-    letter-spacing: 0.03em;
+    letter-spacing: 0.1em;
     border-bottom: 1px solid whitesmoke;
+    text-shadow: 0.5px 1px rgb(33, 217, 220);
 }
 
 .radio-button-group {
