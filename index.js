@@ -20,6 +20,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
         circleName = document.querySelector('.circle');
         circleName.classList.add(breath);
+
+        const modal = document.querySelector(".modal");
+        const modalDescriptor = document.querySelector(".in-breath-about");
         
         switch(breath){
             case 'ocean':
@@ -59,9 +62,6 @@ document.addEventListener("DOMContentLoaded", () => {
                         const playState = circleName.style.animationPlayState === 'paused' ? 'running' : 'paused';
 
                         circleName.style.animationPlayState = playState;
-
-                        let modal = document.querySelector(".modal");
-                        let modalDescriptor = document.querySelector(".in-breath-about");
 
                         if (playState === 'paused') {
                             modal.style.display = 'inline-block';
@@ -140,41 +140,44 @@ document.addEventListener("DOMContentLoaded", () => {
                 styleElement.innerHTML = keyFrame;
                 document.getElementsByTagName('head')[0].appendChild(styleElement);
 
+                modal.style.display = 'inline-block';
+                modalDescriptor.innerHTML = `
+                    <p class='current-animation-descriptor'>
+                        You are currently practicing the Nadi Shudhana Breath.
+                        <br>
+                        <br>
+                        If you'd like to continue, please press the spacebar.
+                        <br>
+                        <br>
+                        If you would like to practice a different breath, please refresh the page.
+                        <br>
+                        <br>
+                        If you'd like to learn more about me or this project, please view the links to the right.
+                    </p>
+                `;
+
                 const checkAltKeyPress = key => {
                     if (key.keyCode == '32') {
                         const playState = circleName.style.animationPlayState === 'paused' ? 'running' : 'paused';
 
                         circleName.style.animationPlayState = playState;
 
-                        let modal = document.querySelector(".modal");
-                        let modalDescriptor = document.querySelector(".in-breath-about");
-
                         if (playState === 'paused'){
                             modal.style.display = 'inline-block';
-                            modalDescriptor.innerHTML = `
-                                <p class='current-animation-descriptor'>
-                                    You are currently practicing the Nadi Shudhana Breath.
-                                    <br>
-                                    <br>
-                                    If you'd like to continue, please press the spacebar.
-                                    <br>
-                                    <br>
-                                    If you would like to practice a different breath, please refresh the page.
-                                    <br>
-                                    <br>
-                                    If you'd like to learn more about me or this project, please view the links to the right.
-                                </p>
-                            `;
                         } else {
                             modal.style.display = 'none';
                         }
+                    } else if (key.keyCode == '82'){
+                        location.reload();
                     }
                 };
                 window.addEventListener('keydown', checkAltKeyPress, false);
 
                 circleName.style.animation = `
-                    alt-breath ${totTime}s 2.5s linear infinite paused
+                    alt-breath ${totTime}s linear infinite
                 `;
+
+                circleName.style.animationPlayState = 'paused';
                 break;
             case 'fire':
                 // while loop allows small %s for pulse effect
@@ -227,8 +230,6 @@ document.addEventListener("DOMContentLoaded", () => {
                 styleElement.innerHTML = keyFrame;
                 document.getElementsByTagName('head')[0].appendChild(styleElement);
 
-                const modal = document.querySelector(".modal");
-                const modalDescriptor = document.querySelector(".in-breath-about");
                 modal.style.display = 'inline-block';
                 modalDescriptor.innerHTML = `
                     <p class='current-animation-descriptor'>
@@ -257,7 +258,6 @@ document.addEventListener("DOMContentLoaded", () => {
                             modal.style.display = 'none';
                         }
                     } else if (key.keyCode == '82') {
-                        console.log('rrrrr');
                         location.reload();
                     }
                 };
@@ -267,7 +267,6 @@ document.addEventListener("DOMContentLoaded", () => {
                     fire-breath 90s linear infinite
                 `;
                 
-
                 circleName.style.animationPlayState = 'paused';
                 break;
             default: 
