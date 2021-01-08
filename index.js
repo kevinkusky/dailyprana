@@ -57,6 +57,22 @@ document.addEventListener("DOMContentLoaded", () => {
                 styleElement.innerHTML = keyFrame;
                 document.getElementsByTagName('head')[0].appendChild(styleElement);
 
+                modal.style.display = 'inline-block';
+                modalDescriptor.innerHTML = `
+                    <p class='current-animation-descriptor'>
+                        You are currently practicing the Ujjayi Breath.
+                        <br>
+                        <br>
+                        If you would like to continue, please press the spacebar.
+                        <br>
+                        <br>
+                        If you would like to practice a different breath, please refresh the page.
+                        <br>
+                        <br>
+                        If you'd like to learn more about me or this project, please view the links to the right.
+                    </p>
+                `;
+                
                 const checkWetKeyPress = key => {
                     if (key.keyCode == '32') {
                         const playState = circleName.style.animationPlayState === 'paused' ? 'running' : 'paused';
@@ -65,31 +81,21 @@ document.addEventListener("DOMContentLoaded", () => {
 
                         if (playState === 'paused') {
                             modal.style.display = 'inline-block';
-                            modalDescriptor.innerHTML = `
-                                <p class='current-animation-descriptor'>
-                                    You are currently practicing the Ujjayi Breath.
-                                    <br>
-                                    <br>
-                                    If you would like to continue, please press the spacebar.
-                                    <br>
-                                    <br>
-                                    If you would like to practice a different breath, please refresh the page.
-                                    <br>
-                                    <br>
-                                    If you'd like to learn more about me or this project, please view the links to the right.
-                                </p>
-                            `;
                         } else {
                             modal.style.display = 'none';
                         }
+                    } else if (key.keyCode == '82'){
+                        location.reload();
                     }
                 };
 
                 window.addEventListener('keydown', checkWetKeyPress, false);
 
                 circleName.style.animation = `
-                    ocean-breath ${totTime}s 2s linear infinite paused
+                    ocean-breath ${totTime}s linear infinite
                 `;
+
+                circleName.style.animationPlayState = 'paused'
                 break;
             case 'alternate':
                 // per side params => double time
