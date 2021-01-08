@@ -88,7 +88,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 window.addEventListener('keydown', checkWetKeyPress, false);
 
                 circleName.style.animation = `
-                    ocean-breath ${totTime}s 2s linear infinite running
+                    ocean-breath ${totTime}s 2s linear infinite paused
                 `;
                 break;
             case 'alternate':
@@ -173,7 +173,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 window.addEventListener('keydown', checkAltKeyPress, false);
 
                 circleName.style.animation = `
-                    alt-breath ${totTime}s 2.5s linear infinite running
+                    alt-breath ${totTime}s 2.5s linear infinite paused
                 `;
                 break;
             case 'fire':
@@ -226,6 +226,24 @@ document.addEventListener("DOMContentLoaded", () => {
                 // adds animation to be picked up by below CSS call
                 styleElement.innerHTML = keyFrame;
                 document.getElementsByTagName('head')[0].appendChild(styleElement);
+
+                const modal = document.querySelector(".modal");
+                const modalDescriptor = document.querySelector(".in-breath-about");
+                modal.style.display = 'inline-block';
+                modalDescriptor.innerHTML = `
+                    <p class='current-animation-descriptor'>
+                        You are currently practicing Kapalabhati Breath.
+                        <br>
+                        <br>
+                        If you'd like to continue, please press the spacebar.
+                        <br>
+                        <br>
+                        If you would like to practice a different breath, please refresh the page.
+                        <br>
+                        <br>
+                        If you'd like to learn more about me or this project, please view the links to the right.
+                    </p>
+                `;
                 
                 const checkHotKeyPress = key => {
                     if (key.keyCode == '32'){
@@ -233,35 +251,23 @@ document.addEventListener("DOMContentLoaded", () => {
 
                         circleName.style.animationPlayState = playState;
 
-                        let modal = document.querySelector(".modal");
-                        let modalDescriptor = document.querySelector(".in-breath-about");
-
                         if (playState === 'paused') {
                             modal.style.display = 'inline-block';
-                            modalDescriptor.innerHTML = `
-                                <p class='current-animation-descriptor'>
-                                    You are currently practicing Kapalabhati Breath.
-                                    <br>
-                                    <br>
-                                    If you'd like to continue, please press the spacebar.
-                                    <br>
-                                    <br>
-                                    If you would like to practice a different breath, please refresh the page.
-                                    <br>
-                                    <br>
-                                    If you'd like to learn more about me or this project, please view the links to the right.
-                                </p>
-                            `;
                         } else {
                             modal.style.display = 'none';
                         }
+                    } else if (key.keyCode == '82') {
+                        reload();
                     }
                 };
                 document.addEventListener('keydown', checkHotKeyPress, false);
 
                 circleName.style.animation = `
-                    fire-breath 90s 3.5s linear infinite running
+                    fire-breath 90s linear infinite
                 `;
+                
+
+                circleName.style.animationPlayState = 'paused';
                 break;
             default: 
                 // shouldn't get here - break incase
