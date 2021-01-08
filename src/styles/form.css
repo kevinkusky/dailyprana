@@ -67,6 +67,7 @@ body {
     display: flex;
     justify-content: space-evenly;
     margin-top: 10%;
+    flex-wrap: wrap;
 }
 
 .form-content {
@@ -157,13 +158,16 @@ body {
 }
 
 .app-instructions {
-    margin-top: -20px;
-    margin-left: -180px;
+    margin-right: calc(-5px - 20%);
+    margin-left: calc(-5% - 20px);
+    max-width: 750px;
+    min-width: 222px;
 }
 
 .breath-specific-options {
     display: inline-block;
-    width: 420px;
+    min-width: 2%;
+    max-height: 600px;
     margin-top: calc(-9% + 10px);
 }
 
@@ -218,12 +222,11 @@ body {
 .breath-descriptor{
     display: inline-block;
     position: relative;
-    width: calc(110% - 80px);
-    margin-left: calc(1.5% - 40px);
+    margin-right: calc(0% + 200px);
     margin-top: calc(10vh - 20%);
-    height: calc(10% - 10px);
     max-height: 400px !important;
     min-width: 400px;
+    max-width: 75%;
     color: whitesmoke;
     background-color: rgba(0, 0, 0, 0.426);
     padding: 12px;

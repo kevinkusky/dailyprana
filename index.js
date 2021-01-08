@@ -72,7 +72,7 @@ document.addEventListener("DOMContentLoaded", () => {
                         If you'd like to learn more about me or this project, please view the links to the right.
                     </p>
                 `;
-                
+
                 const checkWetKeyPress = key => {
                     if (key.keyCode == '32') {
                         const playState = circleName.style.animationPlayState === 'paused' ? 'running' : 'paused';
