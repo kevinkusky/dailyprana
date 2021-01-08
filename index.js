@@ -257,7 +257,8 @@ document.addEventListener("DOMContentLoaded", () => {
                             modal.style.display = 'none';
                         }
                     } else if (key.keyCode == '82') {
-                        reload();
+                        console.log('rrrrr');
+                        location.reload();
                     }
                 };
                 document.addEventListener('keydown', checkHotKeyPress, false);
