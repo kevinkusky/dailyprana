@@ -30,6 +30,7 @@ body {
     transform: translate(-50%, -50%);
     background-color: rgba(61, 55, 43, 0.349);
     text-shadow: rgb(226, 191, 126) 2px 3px 13px;
+    overflow-y: auto;
 }
 
 .app-header {
@@ -246,7 +247,7 @@ body {
     background-color: rgba(0, 0, 0, 0.426);
     padding: 12px;
     overflow-x: hidden;
-    overflow-y: scroll;
+    overflow-y: auto;
     font-size: 14.9px;
 }
 
