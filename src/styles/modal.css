@@ -21,6 +21,7 @@
     box-shadow: 5px 10px 18px rgb(72, 146, 105);
     z-index: 101;
     background-color: rgba(26, 2, 2, 0.575);
+    overflow: auto;
 }
 
 .about-links {
@@ -44,9 +45,10 @@
 
 .current-animation-descriptor {
     margin: calc(20vh + 7%);
-    width: calc(50vw - 34%);
-    margin-left: 8%;
+    width: calc(50vw - 40%);
+    /* margin-top: 8%; */
     color: whitesmoke;
     font-weight: 700;
     letter-spacing: 0.1em;
+    text-align: center;
 }

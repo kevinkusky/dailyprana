@@ -59,18 +59,24 @@ document.addEventListener("DOMContentLoaded", () => {
 
                 modal.style.display = 'inline-block';
                 modalDescriptor.innerHTML = `
-                    <p class='current-animation-descriptor'>
-                        You are currently practicing the Ujjayi Breath.
+                    <span class='current-animation-descriptor'>
+                        You are currently practicing the Ujjayi Breath with:
+                        <ul>
+                            <li>Inhale: ${inhale}s</li>
+                            <li>Exhale: ${exhale}s</li>
+                            <li>Pause: ${pause}s</li>
+                        </ul>
                         <br>
                         <br>
-                        If you would like to continue, please press the spacebar.
+                        If you would like to practice a different breath or change the parameters
+                        press the R key
                         <br>
                         <br>
-                        If you would like to practice a different breath, please refresh the page.
+                        If you would like to continue, please press the SPACEBAR.
                         <br>
                         <br>
                         If you'd like to learn more about me or this project, please view the links to the right.
-                    </p>
+                    </span>
                 `;
 
                 const checkWetKeyPress = key => {
@@ -148,18 +154,24 @@ document.addEventListener("DOMContentLoaded", () => {
 
                 modal.style.display = 'inline-block';
                 modalDescriptor.innerHTML = `
-                    <p class='current-animation-descriptor'>
-                        You are currently practicing the Nadi Shudhana Breath.
+                    <span class='current-animation-descriptor'>
+                        You are currently practicing the Nadi Shudhana Breath with:
+                        <ul>
+                            <li>Inhale: ${inhale}s</li>
+                            <li>Exhale: ${exhale}s</li>
+                            <li>Pause: ${pause}s</li>
+                        </ul>
                         <br>
                         <br>
-                        If you'd like to continue, please press the spacebar.
+                        If you would like to practice a different breath or change the parameters
+                        press the R key
                         <br>
                         <br>
-                        If you would like to practice a different breath, please refresh the page.
+                        If you would like to continue, please press the SPACEBAR.
                         <br>
                         <br>
                         If you'd like to learn more about me or this project, please view the links to the right.
-                    </p>
+                    </span>
                 `;
 
                 const checkAltKeyPress = key => {
@@ -238,18 +250,19 @@ document.addEventListener("DOMContentLoaded", () => {
 
                 modal.style.display = 'inline-block';
                 modalDescriptor.innerHTML = `
-                    <p class='current-animation-descriptor'>
+                    <span class='current-animation-descriptor'>
                         You are currently practicing Kapalabhati Breath.
                         <br>
                         <br>
-                        If you'd like to continue, please press the spacebar.
+                        If you would like to practice a different breath or change the parameters
+                        press the R key
                         <br>
                         <br>
-                        If you would like to practice a different breath, please refresh the page.
+                        If you would like to continue, please press the SPACEBAR.
                         <br>
                         <br>
                         If you'd like to learn more about me or this project, please view the links to the right.
-                    </p>
+                    </span>
                 `;
                 
                 const checkHotKeyPress = key => {
