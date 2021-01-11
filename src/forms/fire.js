@@ -17,8 +17,8 @@ const fireBreathForm = () => {
             </p>
         `;
 
-    // let breathParamsField = document.querySelector(".breath-specific-options");
-    // breathParamsField.innerHTML = "";
+    let breathParamsField = document.querySelector(".breath-specific-options");
+    breathParamsField.innerHTML = "";
 
     let fireFormSubmit = document.querySelector(".inactive-submit");
     fireFormSubmit.classList.add("show-submit");

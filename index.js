@@ -48,7 +48,6 @@ document.addEventListener("DOMContentLoaded", () => {
     // Listens to Radio buttons and dynamically renders HTML
     const radioFormDirector = () => {
         let radios = document.getElementsByClassName("radio-button");
-
         let inhaleInput, exhaleInput, pauseInput;
 
         for (let i = 0; i < radios.length; i++) {
