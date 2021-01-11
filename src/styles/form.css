@@ -7,7 +7,6 @@ body {
     font-family: 'Raleway', sans-serif;
 }
 
-
 .page-wrapper {
     display: flex;
     justify-self: center;
@@ -31,6 +30,7 @@ body {
     background-color: rgba(61, 55, 43, 0.349);
     text-shadow: rgb(226, 191, 126) 2px 3px 13px;
     overflow-y: auto;
+    overflow-x: hidden;
 }
 
 .app-header {
@@ -69,17 +69,14 @@ body {
 .all-form-content {
     display: flex;
     justify-content: space-evenly;
-    justify-self: center;
-    margin-top: 10%;
+    margin-top: calc(10% + 50px);
     margin-left: calc(9px + 1vw);
     flex-wrap: wrap;
     align-content: center;
-    width: calc(90vw - 12%)
+    width: calc(95vw - 12%)
 }
 
-.form-content {
-    display: flex;
-}
+.form-content { display: flex; }
 
 .app-director-form {
     display: flex;
@@ -87,7 +84,7 @@ body {
     justify-content: space-evenly;
     align-content: center;
     align-items: center;
-    margin: 70px;
+    margin: 65px;
     height: 55%;
 }
 
@@ -149,7 +146,7 @@ body {
     color: rgb(235, 131, 226);
     font-weight: bolder;
     letter-spacing: 0.1em;
-    border-bottom: 1px solid whitesmoke;
+    border-bottom: 1.7px solid rgb(33,217,220);
     text-shadow: 0.5px 1px rgb(33, 217, 220);
 }
 
@@ -159,8 +156,9 @@ body {
     justify-content: space-evenly;
     width: 289px;
     height: 100px;
-    margin-left: calc(29% - 15vw);
-    margin-top: calc(-13% - 10px);
+    margin-left: -9vw;
+    padding-right: 1vw;
+    margin-top: -3vh;
     transition: 1.2s;
 }
 
@@ -256,13 +254,9 @@ body {
     text-shadow: none;
 }
 
-.breath-descriptor a:hover {
-    color:rgb(234, 234, 30);
-}
+.breath-descriptor a:hover { color:rgb(234, 234, 30); }
 
-.inactive-submit {
-    display: none;
-}
+.inactive-submit { display: none; }
 
 .show-submit {
     display: block;
