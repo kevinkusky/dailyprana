@@ -1,12 +1,10 @@
-.eventual-circle {
-    display: none;
-}
+.eventual-circle { display: none; }
 
 .circle-page-wrap {
     background: rgb(0,0,0) url(../../assets/mp-breath-bg.png) 50% 50% no-repeat fixed;
     background-size: 98% 97%;
     width: 100%;
-    height: 97.9vh;
+    height: 97.2vh;
     opacity: 0.82;
     display: flex;
     justify-content: center;

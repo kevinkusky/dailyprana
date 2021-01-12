@@ -54,20 +54,21 @@ const circleDirections = ({ breath, inhale, exhale, pause }) => {
                     <span class='current-animation-descriptor'>
                         You are currently practicing the Ujjayi Breath with:
                         <ul>
-                            <li>Inhale: ${inhale}s</li>
-                            <li>Exhale: ${exhale}s</li>
-                            <li>Pause: ${pause}s</li>
+                            <li>Inhale: ${inhale} seconds</li>
+                            <li>Exhale: ${exhale} seconds</li>
+                            <li>Pause: ${pause} seconds</li>
                         </ul>
                         <br>
-                        <br>
-                        If you would like to practice a different breath or change the parameters
-                        press the R key
-                        <br>
-                        <br>
-                        If you would like to continue, please press the SPACEBAR.
+                        If you would like to practice a different breath or change 
+                        the parameters press the R key
                         <br>
                         <br>
-                        If you'd like to learn more about me or this project, please view the links to the right.
+                        If you would like either continue the breath or return to 
+                        this menu at any time, please press the SPACEBAR
+                        <br>
+                        <br>
+                        If you'd like to learn more about me or this project, 
+                        please view the links to the right
                     </span>
                 `;
 
@@ -149,20 +150,21 @@ const circleDirections = ({ breath, inhale, exhale, pause }) => {
                     <span class='current-animation-descriptor'>
                         You are currently practicing the Nadi Shudhana Breath with:
                         <ul>
-                            <li>Inhale: ${inhale}s</li>
-                            <li>Exhale: ${exhale}s</li>
-                            <li>Pause: ${pause}s</li>
+                            <li>Inhale: ${inhale} seconds</li>
+                            <li>Exhale: ${exhale} seconds</li>
+                            <li>Pause: ${pause} seconds</li>
                         </ul>
                         <br>
-                        <br>
-                        If you would like to practice a different breath or change the parameters
-                        press the R key
-                        <br>
-                        <br>
-                        If you would like to continue, please press the SPACEBAR.
+                        If you would like to practice a different breath or change 
+                        the parameters press the R key
                         <br>
                         <br>
-                        If you'd like to learn more about me or this project, please view the links to the right.
+                        If you would like either continue the breath or return to 
+                        this menu at any time, please press the SPACEBAR
+                        <br>
+                        <br>
+                        If you'd like to learn more about me or this project, 
+                        please view the links to the right
                     </span>
                 `;
 
@@ -243,17 +245,43 @@ const circleDirections = ({ breath, inhale, exhale, pause }) => {
             modal.style.display = 'inline-block';
             modalDescriptor.innerHTML = `
                     <span class='current-animation-descriptor'>
-                        You are currently practicing the Kapalabhati Breath.
+                        You are currently practicing the Kapalabhati Breath
+                        <br>
+                        Due to the intention of the breath, there is no user 
+                        input for this breath, however to follow with the animation:
+                        <ul>
+                            <li>Breath Prep:
+                                <ul>
+                                    <li>6 second Inhale</li>
+                                    <li>2 second Pause</li>
+                                    <li>6 second Exhale</li>
+                                    <li>2 second Pause</li>
+                                </ul>
+                            </li>
+                            <li>6 second Inhale to prepare for the practice</li>
+                            <li>60 seconds of steady forceful breaths
+                                <ul>
+                                    <li>
+                                        The timing of this breath should be steady 
+                                        and rigerous.  A pair of inhalations and exhalations
+                                        spans 0.6 seconds to keep pace with the animation.
+                                        Remember to contract the abdomen while exhaling
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>6 second Exhale</li>
+                            <li>2 second Pause</li>
+                        </ul>
+                        If you would like to practice a different breath or 
+                        change the parameters press the R key
                         <br>
                         <br>
-                        If you would like to practice a different breath or change the parameters
-                        press the R key
+                        If you would like either continue the breath or return to 
+                        this menu at any time, please press the SPACEBAR
                         <br>
                         <br>
-                        If you would like to continue, please press the SPACEBAR.
-                        <br>
-                        <br>
-                        If you'd like to learn more about me or this project, please view the links to the right.
+                        If you'd like to learn more about me or this project, 
+                        please view the links to the right.
                     </span>
                 `;
 

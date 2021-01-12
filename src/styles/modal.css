@@ -16,12 +16,13 @@
     transform:translate(-50%, -50%);
     position: fixed;
     border: 1.3px solid;
-    height: calc(100vh - 25%);
-    width: calc(100vw - 27%);
+    height: calc(100vh - 18%);
+    width: calc(100vw - 23%);
     box-shadow: 5px 10px 18px rgb(72, 146, 105);
     z-index: 101;
-    background-color: rgba(26, 2, 2, 0.575);
-    overflow: auto;
+    background-color: rgba(24, 16, 1, 0.658);
+    overflow-y: auto;
+    overflow-x: hidden;
 }
 
 .about-links {
@@ -44,14 +45,17 @@
 }
 
 .in-breath-about {
-    max-height: calc(80% - 20vh);
+    max-height: calc(90% - 5vh);
     min-height: calc(20% + 10vh);
-    width: 69%;
+    width: 64%;
     letter-spacing: 0.1em;
     color: whitesmoke;
     margin: 12px;
     overflow-x: hidden;
     overflow-y: auto;
-    font-size: 15.2px;
-    margin-top: calc(2% + 9vh);
+    font-size: 16.9px;
+    margin-left: calc(2.7% + 13vh);
+    margin-right: calc(2.7% + 13vh);
+    margin-top: calc(2.7% + 5vh);
+    margin-bottom: calc(2.7% + 5vh);
 }
