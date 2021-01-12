@@ -46,7 +46,7 @@ body {
     text-align: center;
     font-weight: 800;
     color: whitesmoke;
-    background-color: rgba(0, 0, 0, 0.534);
+    background-color: rgba(0, 0, 0, 0.692);
     height: 29px;
     padding: 5px;
     max-width: calc(30vw + 500px);
@@ -59,7 +59,7 @@ body {
     justify-content: center;
     font-weight: 800;
     color: whitesmoke;
-    background-color: rgba(0, 0, 0, 0.534);
+    background-color: rgba(0, 0, 0, 0.692);
     height: 55px;
     width: 290px;
     padding: 6px;
@@ -77,7 +77,9 @@ body {
 
 .form-content { 
     display: flex; 
-    margin-left: 12%;
+    margin-right: -50%;
+    width: 100%;
+    margin-top: calc(7vh - 5%);
 }
 
 .app-director-form {
@@ -167,7 +169,7 @@ body {
     display: inline;
     min-width: 2%;
     max-height: 600px;
-    margin-top: calc(-9% + 10px);
+    margin-top: calc(-2% + 10px);
 }
 
 .selected-breath-description{
@@ -183,7 +185,7 @@ body {
     min-width: calc(1% + 222px);
     letter-spacing: 0.1em;
     color: whitesmoke;
-    background-color: rgba(0, 0, 0, 0.426);
+    background-color: rgba(0, 0, 0, 0.692);
     padding: 12px;
     overflow-x: hidden;
     overflow-y: auto;

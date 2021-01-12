@@ -35,15 +35,30 @@ const altBreathForm = () => {
     breathParamsField.innerHTML = `
             <div class='input-group'>
                 <div class='input-container'>
-                    <input type="text" name='inhale' class='inhale-input' required>
+                    <input 
+                        type="text"
+                        name='inhale' 
+                        class='inhale-input' 
+                        required
+                    >
                     <label for="inhale">Inhale</label>
                 </div>
                 <div class='input-container'>
-                    <input type="text" name='exhale' class='exhale-input' required>
+                    <input 
+                        type="text" 
+                        name='exhale' 
+                        class='exhale-input' 
+                        required
+                    >
                     <label for="exhale">Exhale</label>
                 </div>
                 <div class='input-container'>
-                    <input type="text" name='pause' class='pause-input' required>
+                    <input 
+                        type="text" 
+                        name='pause' 
+                        class='pause-input' 
+                        required
+                    >
                     <label for="pause">Pause</label>
                 </div>
             </div>
