@@ -5,9 +5,8 @@ const fireBreathForm = () => {
             <span class='breath-descriptor'>
                 Kapalabhati breath is also known as skull shining breath
                 <br>
-                <br>
                 Kapalabhati is a yogic breathing technique aimed to clear the mind, 
-                energize the body, and stimulate digestion.
+                energize the body, and stimulate digestion
                 <br>
                 <br>
                 To practice this breath, Follow these instructions with the animation:
