@@ -43,12 +43,15 @@
     color:rgb(233, 219, 95)
 }
 
-.current-animation-descriptor {
-    margin: calc(20vh + 7%);
-    width: calc(50vw - 40%);
-    /* margin-top: 8%; */
-    color: whitesmoke;
-    font-weight: 700;
+.in-breath-about {
+    max-height: calc(80% - 20vh);
+    min-height: calc(20% + 10vh);
+    width: 69%;
     letter-spacing: 0.1em;
-    text-align: center;
+    color: whitesmoke;
+    margin: 12px;
+    overflow-x: hidden;
+    overflow-y: auto;
+    font-size: 15.2px;
+    margin-top: calc(2% + 9vh);
 }
