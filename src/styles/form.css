@@ -151,7 +151,7 @@ body {
     font-weight: bolder;
     letter-spacing: 0.1em;
     border-bottom: 1.7px solid rgb(33,217,220);
-    text-shadow: 0.5px 1px rgb(33, 217, 220);
+    text-shadow: 0.7px 1px rgba(33, 217, 220, 0.856);
 }
 
 .radio-button-group {
@@ -212,9 +212,7 @@ body {
 }
 
 .input-group input{
-    margin: 10px 0px;
-    top: -20px;
-    left: 0;
+    margin: 8px 0px;
     padding-left: 3px;
     border-radius: 6px;
     height: 20px;
