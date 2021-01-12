@@ -4,7 +4,7 @@ const altBreathForm = () => {
     let descriptorPar = document.querySelector(".selected-breath-description");
     descriptorPar.innerHTML = `
             <span class='breath-descriptor'>
-                Nadi Shodhana is known as Alternate Nostril Breathing.
+                Nadi Shodhana is known as Alternate Nostril Breathing
                 <br>
                 <br>
                 As the name might imply, this breath will involve using the hands 
