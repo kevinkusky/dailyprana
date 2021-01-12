@@ -21,8 +21,8 @@ body {
 .all-form {
     border: 2.5px solid rgb(42, 158, 42);
     box-shadow: 10px 15px 24px rgb(155, 107, 18);
-    height: calc(100vh - 21%);
-    width: calc(100vw - 10%);
+    height: calc(100vh - 12%);
+    width: calc(100vw - 8%);
     top: 50%;
     left: 50%;
     position: fixed;
@@ -69,9 +69,8 @@ body {
 .all-form-content {
     display: flex;
     justify-content: space-evenly;
-    margin-top: calc(10% + 50px);
+    margin-top: calc(10% + 80px);
     margin-left: calc(9px + 1vw);
-    flex-wrap: wrap;
     align-content: center;
     width: calc(95vw - 12%)
 }
@@ -159,7 +158,8 @@ body {
     justify-content: space-evenly;
     width: 289px;
     height: 100px;
-    margin-top: calc(-9vh - 2%);
+    margin-top: calc(-20vh - 2%);
+    margin-left: calc(-10vw + 10px);
     transition: 1.2s;
 }
 
@@ -173,12 +173,13 @@ body {
 .selected-breath-description{
     display: flex;
     justify-content: center;
+    justify-self: center;
 }
 
 .breath-descriptor{
     max-height: calc(80% - 20vh);
     min-height: calc(20% + 10vh);
-    max-width: calc(80% - 12vw);
+    max-width: calc(80vw - 8%);
     min-width: calc(1% + 222px);
     letter-spacing: 0.1em;
     color: whitesmoke;
@@ -186,7 +187,8 @@ body {
     padding: 12px;
     overflow-x: hidden;
     overflow-y: auto;
-    font-size: 14.9px;
+    font-size: 15.2px;
+    margin-top: calc(2% + 0.8vh);
 }
 
 .breath-descriptor a {
@@ -197,7 +199,7 @@ body {
 .breath-descriptor a:hover { color:rgb(234, 234, 30); }
 
 .input-group {
-    margin-top: calc(-65px - 9%);
+    margin-top: calc(-20vh - 13%);
     margin-left: calc(5% + 35px);
 }
 
@@ -248,8 +250,8 @@ body {
 
 .show-submit {
     display: inline;
-    margin-left: calc(-100px - 36vw);
-    margin-top: calc(-3% - 14vh);
+    margin-top: calc(1% + 14px);
+    margin-left: calc(-10vw + 10px);
     height: 58px;
     width: 86px;
     background: transparent;
