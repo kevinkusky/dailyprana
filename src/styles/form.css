@@ -77,9 +77,10 @@ body {
 
 .form-content { 
     display: flex; 
-    margin-right: -50%;
+    top: 50%;
+    left: 50%;
+    transform: translate(42%, -145%);
     width: 100%;
-    margin-top: -31vh;
 }
 
 .app-director-form {
@@ -149,9 +150,9 @@ body {
 .radio-button:checked+label {
     color: rgb(235, 131, 226);
     font-weight: bolder;
-    letter-spacing: 0.1em;
+    letter-spacing: 0.1.5em;
     border-bottom: 1.7px solid rgb(33,217,220);
-    text-shadow: 0.7px 1px rgba(33, 217, 220, 0.856);
+    text-shadow: 2px 1px rgba(17, 137, 139, 0.945);
 }
 
 .radio-button-group {
@@ -176,7 +177,7 @@ body {
     justify-content: center;
     justify-self: center;
     margin-bottom: -4%;
-    margin-top: -0.19%;
+    margin-top: -2%;
     max-height: calc(80% - 20vh);
     min-height: calc(20% + 10vh);
     max-width: calc(98% - 1vw);
@@ -191,7 +192,7 @@ body {
     overflow-x: hidden;
     overflow-y: auto;
     font-size: 15.2px;
-    margin-top: calc(2% + 0.8vh);
+    margin-top: calc(-19vh - 5%);
 }
 
 .breath-descriptor a {
@@ -213,20 +214,19 @@ body {
 
 .input-group input{
     margin: 8px 0px;
-    padding-left: 3px;
+    padding-left: 5px;
     border-radius: 6px;
-    height: 20px;
+    height: 23px;
+    width: 140px;
 }
 
 .input-group input:focus,
 .input-group input:valid{
-     top: -20px;
-     left: 0;
-     padding-left: 3px;
-     border: 2.3px solid rgb(91, 128, 223);
-     border-radius: 6px;
-     background-color: whitesmoke;
-     font-size: 15.5px;
+    padding-left: 5px;
+    border: 2.3px solid rgb(91, 128, 223);
+    border-radius: 6px;
+    background-color: whitesmoke;
+    font-size: 15.5px;
 }
     
 .input-group label {
@@ -252,7 +252,7 @@ body {
 .show-submit {
     display: inline;
     margin-top: calc(1% + 14px);
-    margin-left: calc(-10vw + 10px);
+    margin-left: calc(-11.8vw + 10px);
     height: 58px;
     width: 86px;
     background: transparent;
