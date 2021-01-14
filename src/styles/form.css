@@ -4,7 +4,7 @@ body {
     align-content: center;
     height: 100%;
     width: 99%;
-    font-family: 'Raleway', sans-serif;
+    font-family: 'Cormorant Garamond', serif;
 }
 
 .page-wrapper {
@@ -37,7 +37,7 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-top: -1%;
+    margin-top: -2.2%;
 }
 
 .app-header span {
@@ -49,9 +49,11 @@ body {
     color: whitesmoke;
     background-color: rgba(0, 0, 0, 0.692);
     height: 29px;
-    padding: 5px;
-    max-width: calc(30vw + 500px);
-    margin-top: -21px;
+    padding: 7px;
+    max-width: calc(30vw + 575px);
+    margin-top: -35px;
+    font-size: 16.3px;
+    letter-spacing: 0.05em;
 }
 
 .app-header h2 {
@@ -77,7 +79,7 @@ body {
 
 .form-content { 
     display: flex; 
-    transform: translate(42%, -137%);
+    transform: translate(42%, -139%);
     width: 100%;
     margin-bottom: calc(4% - 36.1px);
 }
@@ -94,10 +96,9 @@ body {
 
 .radio-label {
     transition: 1.6s;
-    font-weight: 800;
-    font-size: 22px;
-    margin-bottom: 45px;
-    padding-bottom: 2.5px;
+    font-weight: 900;
+    font-size: 25px;
+    padding-bottom: 2.1px;
     color: rgb(33, 217, 220);
     letter-spacing: 0.082em;
     cursor: pointer;
@@ -159,7 +160,7 @@ body {
     flex-direction: column;
     justify-content: space-evenly;
     width: 289px;
-    height: 100px;
+    height: 120px;
     margin-left: calc(-10vw + 10px);
     transition: 1.2s;
 }
@@ -175,21 +176,21 @@ body {
     display: flex;
     justify-content: center;
     justify-self: center;
-    transform: translate(2.3%, -69%);
+    transform: translate(2.3%, -73%);
     margin-bottom: -45vh;
     position: relative;
     width: 87vw;
-    height: 324px;
+    height: 330px;
 }
 
 .breath-descriptor{
-    letter-spacing: 0.1em;
     color: whitesmoke;
     background-color: rgba(0, 0, 0, 0.692);
     padding: 11px;
     overflow-x: hidden;
     overflow-y: auto;
-    font-size: 15.2px;
+    font-size: 17.6px;
+    padding: 11px;
 }
 
 .breath-descriptor a {
@@ -248,7 +249,7 @@ body {
 
 .show-submit {
     display: inline;
-    margin-top: calc(1% + 14px);
+    margin-top: calc(1% + 6px);
     margin-left: calc(-11.8vw + 10px);
     height: 47px;
     width: 78px;
