@@ -31,6 +31,7 @@ body {
     text-shadow: rgb(226, 191, 126) 2px 3px 13px;
     overflow-y: auto;
     overflow-x: hidden;
+    scroll-behavior: smooth;
 }
 
 .app-header {
@@ -189,6 +190,7 @@ body {
     padding: 11px;
     overflow-x: hidden;
     overflow-y: auto;
+    scroll-behavior: smooth;
     font-size: 17.6px;
     padding: 11px;
 }
