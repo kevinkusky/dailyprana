@@ -1,6 +1,5 @@
 const circleDirections = ({ breath, inhale, exhale, pause }) => {
-    // Destructure params and ensure int for calc
-    // let { breath, inhale, exhale, pause } = params;
+    // Ensure int for calc
     inhale = parseInt(inhale);
     exhale = parseInt(exhale);
     pause = parseInt(pause);
